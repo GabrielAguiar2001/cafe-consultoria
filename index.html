@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAFÉ — Jornal de Negócios</title>
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #d8d1be;
+  color: #181511;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.newspaper {
+  width: 1080px;
+  max-width: calc(100% - 30px);
+  margin: 30px auto;
+}
+.page {
+  background: #f4eedc;
+  margin-bottom: 28px;
+  padding: 38px 44px 30px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.14);
+  overflow: hidden;
+}
+.logo {
+  text-align: center;
+  font-size: 55px;
+  line-height: .95;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.logo-sub {
+  text-align: center;
+  margin-top: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: .8px;
+}
+.edition-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  border-top: 1px solid #332e28;
+  border-bottom: 1px solid #332e28;
+  padding: 6px 4px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+}
+.edition-bar div:nth-child(2) { text-align: center; }
+.edition-bar div:last-child { text-align: right; }
+
+.front-grid {
+  display: grid;
+  grid-template-columns: 42% 29% 29%;
+  margin-top: 18px;
+}
+.front-col {
+  min-width: 0;
+  padding: 0 17px;
+}
+.front-col:first-child { padding-left: 0; }
+.front-col:last-child { padding-right: 0; }
+.front-col + .front-col { border-left: 1px solid #6f6559; }
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 31% 38% 31%;
+  margin-top: 18px;
+}
+.analysis-col {
+  min-width: 0;
+  padding: 0 17px;
+}
+.analysis-col:first-child { padding-left: 0; }
+.analysis-col:last-child { padding-right: 0; }
+.analysis-col + .analysis-col { border-left: 1px solid #6f6559; }
+
+.section {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: .25px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.headline {
+  font-size: 39px;
+  line-height: .98;
+  margin: 0 0 10px;
+}
+.article-title {
+  font-size: 21px;
+  line-height: 1.05;
+  margin: 0 0 9px;
+}
+.page-title {
+  font-size: 40px;
+  line-height: 1;
+  margin: 7px 0 10px;
+}
+.subtitle {
+  font-size: 14px;
+  line-height: 1.28;
+  font-style: italic;
+  color: #5c5248;
+  margin-bottom: 17px;
+}
+.article p, .page p {
+  font-size: 13.3px;
+  line-height: 1.47;
+  margin: 0 0 10px;
+  text-align: justify;
+}
+.analysis {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-top: 7px;
+}
+.rule {
+  border-top: 1px solid #a39787;
+  margin: 18px 0;
+}
+.dark-box {
+  background: #29251f;
+  color: #f6efdc;
+  padding: 15px;
+  margin: 18px 0;
+}
+.dark-box .section { color: #f6efdc; }
+.red-box {
+  border: 1.5px solid #8a2119;
+  padding: 14px;
+  margin: 16px 0;
+}
+.quote {
+  border-top: 2px solid #8a2119;
+  border-bottom: 1px solid #8a2119;
+  padding: 17px 7px;
+  margin: 18px 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.28;
+  font-style: italic;
+}
+.framework-item {
+  border-top: 1px solid #aaa090;
+  padding: 11px 0;
+}
+.framework-number {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+}
+.framework-item h3 {
+  font-size: 16px;
+  line-height: 1.12;
+  margin: 4px 0 0;
+}
+.podcast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 34px;
+  margin-top: 16px;
+}
+.podcast-item {
+  border-bottom: 1px solid #aaa090;
+  padding: 11px 0;
+}
+.podcast-name {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.podcast-note {
+  font-size: 11px;
+  line-height: 1.3;
+  font-style: italic;
+  color: #776d61;
+}
+.gmat-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.question {
+  border-bottom: 1px solid #aaa090;
+  padding: 16px 0;
+}
+.question-type {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+.question-text {
+  font-size: 16px;
+  line-height: 1.38;
+  margin: 7px 0;
+}
+.options {
+  font-size: 14px;
+  line-height: 1.55;
+  padding-left: 12px;
+}
+.answer-box {
+  border: 1.5px solid #8a2119;
+  padding: 15px;
+  margin-top: 22px;
+  text-align: center;
+}
+.answer {
+  transform: rotate(180deg);
+  margin-top: 12px;
+  font-size: 14px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #85796c;
+  padding-top: 5px;
+  margin-top: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  color: #766c61;
+}
+
+@media (max-width: 800px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #f4eedc;
+  }
+  .newspaper {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+  }
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 26px 20px;
+    box-shadow: none;
+    border: none;
+    border-bottom: 10px solid #d8d1be;
+  }
+  .front-grid, .analysis-grid, .podcast-grid {
+    display: block;
+  }
+  .front-col, .analysis-col {
+    width: 100%;
+    padding: 0;
+    border: none !important;
+  }
+  .front-col + .front-col,
+  .analysis-col + .analysis-col {
+    border-left: none !important;
+    border-top: 1px solid #a39787 !important;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+  .logo { font-size: 44px; }
+  .headline { font-size: 34px; line-height: 1.02; }
+  .article-title { font-size: 24px; }
+  .page-title { font-size: 34px; }
+  .subtitle { font-size: 15px; }
+  .article p, .page p {
+    font-size: 15px;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .edition-bar {
+    display: block;
+    text-align: center;
+  }
+  .edition-bar div {
+    text-align: center !important;
+    margin: 3px 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="newspaper">
+
+<section class="page">
+  <div class="logo">CAFÉ</div>
+  <div class="logo-sub">JORNAL DE NEGÓCIOS, ESTRATÉGIA, TECNOLOGIA E MERCADOS</div>
+  <div class="edition-bar">
+    <div>04 DE SETEMBRO DE 2026</div>
+    <div>EDIÇÃO TESTE</div>
+    <div>BRASIL • GLOBAL</div>
+  </div>
+
+  <div class="front-grid">
+    <div class="front-col">
+      <div class="section">CAPA</div>
+      <h1 class="headline">A infraestrutura virou o novo campo de batalha da inteligência artificial</h1>
+      <div class="subtitle">Chips, energia, data centers, software e distribuição passam a determinar quem captura valor no próximo ciclo.</div>
+      <div class="article">
+        <p>O avanço da inteligência artificial está deslocando a competição de modelos isolados para ecossistemas completos de infraestrutura. Empresas que controlam capacidade computacional, energia, dados e canais de distribuição ganham poder estratégico.</p>
+      </div>
+
+      <div class="rule"></div>
+
+      <article class="article">
+        <div class="section">BRASIL</div>
+        <h2 class="article-title">Capacidade computacional passa a ser tratada como ativo estratégico</h2>
+        <p>Governos e empresas aumentam investimentos em infraestrutura digital e soberania tecnológica.</p>
+        <div class="analysis">Leitura estratégica: infraestrutura deixa de ser suporte e passa a ser parte da vantagem competitiva.</div>
+      </article>
+
+      <div class="rule"></div>
+
+      <article class="article">
+        <div class="section">ESTRATÉGIA CORPORATIVA</div>
+        <h2 class="article-title">Empresas aceleram a transição de pilotos de IA para escala</h2>
+        <p>O foco começa a sair de provas de conceito e migrar para retorno, produtividade, governança e adoção.</p>
+      </article>
+    </div>
+
+    <div class="front-col">
+      <article class="article">
+        <div class="section">TECNOLOGIA & INFRAESTRUTURA</div>
+        <h2 class="article-title">Data centers, energia e chips ganham peso nas decisões de investimento</h2>
+        <p>O crescimento da IA amplia a demanda por capacidade elétrica, refrigeração e conectividade.</p>
+        <div class="analysis">Leitura estratégica: gargalos físicos passam a limitar mercados digitais.</div>
+      </article>
+
+      <div class="rule"></div>
+
+      <article class="article">
+        <div class="section">M&A</div>
+        <h2 class="article-title">Aquisições de tecnologia passam a buscar distribuição e ecossistema</h2>
+        <p>Compradores procuram acesso a desenvolvedores, dados e canais, não apenas propriedade intelectual.</p>
+      </article>
+
+      <div class="rule"></div>
+
+      <article class="article">
+        <div class="section">EMPRESAS</div>
+        <h2 class="article-title">Parcerias comerciais desafiam fronteiras tradicionais entre concorrentes</h2>
+        <p>Empresas passam a priorizar alcance, eficiência logística e utilização de ativos.</p>
+      </article>
+    </div>
+
+    <div class="front-col">
+      <div class="section">TENDÊNCIA CENTRAL</div>
+      <article class="article">
+        <div class="section">TENDÊNCIA</div>
+        <h2 class="article-title">A competição migra do produto para a plataforma</h2>
+        <p>O valor passa a estar na capacidade de integrar infraestrutura, software, comunidade e distribuição.</p>
+      </article>
+
+      <div class="red-box">
+        <div class="section">LEITURA ESTRATÉGICA</div>
+        <p>Leia cada notícia como parte de uma cadeia de valor. Quem captura margem? Quem precisa investir capital? Onde estão os gargalos?</p>
+      </div>
+
+      <div class="dark-box">
+        <div class="section">PARA PENSAR COMO CONSULTOR</div>
+        <h3>Três perguntas para levar da notícia ao case</h3>
+        <p>• Onde está o profit pool?</p>
+        <p>• Qual capacidade diferencia os vencedores?</p>
+        <p>• Quanto capital o crescimento exige?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Edição demonstrativa do Café</span><span>PÁGINA 1</span></div>
+</section>
+
+<section class="page">
+  <div class="edition-bar">
+    <div>CAFÉ</div>
+    <div>NEGÓCIOS, ESTRATÉGIA & MERCADOS</div>
+    <div>04-09-2026</div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-col">
+      <article class="article">
+        <div class="section">MERCADOS</div>
+        <h2 class="article-title">Juros, petróleo e tecnologia seguem no radar executivo</h2>
+        <p>Movimentos macroeconômicos continuam impactando custo de capital, margens e múltiplos de empresas.</p>
+      </article>
+
+      <div class="dark-box">
+        <div class="section">IDEIA PARA ENTREVISTA</div>
+        <h2>Como responder: “Quando uma aquisição cria valor?”</h2>
+        <p>Estruture em tese estratégica, sinergias, riscos de execução e captura de valor.</p>
+      </div>
+
+      <div class="section">CHECKLIST</div>
+      <h2 class="article-title">Perguntas para levar para uma entrevista</h2>
+      <p>• Qual é a hipótese central?</p>
+      <p>• Onde está o maior risco?</p>
+      <p>• Qual métrica define sucesso?</p>
+      <p>• O retorno supera o custo de capital?</p>
+    </div>
+
+    <div class="analysis-col">
+      <div class="section">MINI-CASE DO CAFÉ</div>
+      <h1 class="article-title">Plataforma B2B avalia investimento em IA generativa</h1>
+      <p>Uma empresa cresce 12% ao ano e considera investir em copilotos para vendas, suporte e operações.</p>
+
+      <div class="red-box">
+        <strong>PERGUNTA DO CEO</strong>
+        <p>Devemos aprovar o investimento e como estruturar a decisão?</p>
+      </div>
+
+      <div class="framework-item"><div class="framework-number">1. BLOCO DE ANÁLISE</div><h3>Dimensionar valor potencial</h3></div>
+      <div class="framework-item"><div class="framework-number">2. BLOCO DE ANÁLISE</div><h3>Avaliar viabilidade e capacidades</h3></div>
+      <div class="framework-item"><div class="framework-number">3. BLOCO DE ANÁLISE</div><h3>Testar economia e payback</h3></div>
+      <div class="framework-item"><div class="framework-number">4. BLOCO DE ANÁLISE</div><h3>Definir piloto, métricas e escala</h3></div>
+
+      <div class="section">RESPOSTA-BASE</div>
+      <div class="quote">Aprovar um piloto controlado e escalar apenas quando os ganhos líquidos superarem o custo de capital ajustado ao risco.</div>
+    </div>
+
+    <div class="analysis-col">
+      <div class="section">RADAR DO DIA</div>
+      <div class="red-box"><h2>Juros</h2><p>Custo de capital continua central para decisões de investimento.</p></div>
+      <div class="red-box"><h2>Energia</h2><p>Capacidade elétrica passa a limitar expansão de infraestrutura digital.</p></div>
+      <div class="red-box"><h2>IA</h2><p>O mercado começa a separar projetos de alto valor de iniciativas experimentais.</p></div>
+
+      <div class="quote">“Estratégia não é prever um único futuro; é preparar a empresa para diferentes futuros possíveis.”</div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Edição demonstrativa do Café</span><span>PÁGINA 2</span></div>
+</section>
+
+<section class="page">
+  <div class="edition-bar">
+    <div>CAFÉ</div>
+    <div>CADERNO DE ÁUDIO</div>
+    <div>04-09-2026</div>
+  </div>
+
+  <div class="section">CADERNO DE ÁUDIO</div>
+  <h1 class="page-title">Podcasts para pensar como um estrategista</h1>
+  <div class="subtitle">Uma curadoria para acompanhar negócios, entender empresas e construir repertório para entrevistas de consultoria.</div>
+
+  <div class="red-box">
+    <div class="section">TRILHA RECOMENDADA</div>
+    <strong>Como usar estes podcasts na rotina</strong>
+    <p>Diário: notícias e episódios curtos. • Semanal: estratégia e mercados. • Deep dives: histórias completas de empresas.</p>
+  </div>
+
+  <div class="podcast-grid">
+    <div class="podcast-item"><div class="section">TECNOLOGIA</div><div class="podcast-name">Pivot</div><p>Tecnologia, negócios e empresas que moldam a economia digital.</p><div class="podcast-note">Bom para acompanhar debates executivos.</div></div>
+    <div class="podcast-item"><div class="section">ESTRATÉGIA</div><div class="podcast-name">Inside the Strategy Room</div><p>Estratégia, finanças, transformação e M&A.</p><div class="podcast-note">Alta relevância para entrevistas.</div></div>
+    <div class="podcast-item"><div class="section">GESTÃO</div><div class="podcast-name">HBR IdeaCast</div><p>Gestão, liderança, inovação e execução.</p><div class="podcast-note">Amplia repertório executivo.</div></div>
+    <div class="podcast-item"><div class="section">ESTRATÉGIA</div><div class="podcast-name">HBR On Strategy</div><p>Posicionamento, crescimento e decisões estratégicas.</p><div class="podcast-note">Útil para respostas conceituais.</div></div>
+    <div class="podcast-item"><div class="section">M&A</div><div class="podcast-name">Acquired</div><p>Histórias detalhadas de grandes empresas e aquisições.</p><div class="podcast-note">Excelente para criação de valor.</div></div>
+    <div class="podcast-item"><div class="section">NEGÓCIOS</div><div class="podcast-name">Business Movers</div><p>Empresários, decisões, risco e execução.</p><div class="podcast-note">Desenvolve julgamento empresarial.</div></div>
+    <div class="podcast-item"><div class="section">IDEIAS</div><div class="podcast-name">The Next Big Idea</div><p>Inovação, comportamento e liderança.</p><div class="podcast-note">Amplia repertório para fit.</div></div>
+    <div class="podcast-item"><div class="section">CONSULTORIA</div><div class="podcast-name">Strategy Skills Podcast</div><p>Frameworks, pensamento crítico e comunicação estruturada.</p><div class="podcast-note">Útil para preparação de cases.</div></div>
+  </div>
+
+  <div class="footer"><span>Edição demonstrativa do Café</span><span>PÁGINA 3</span></div>
+</section>
+
+<section class="page">
+  <div class="edition-bar">
+    <div>CAFÉ</div>
+    <div>JOGOS DO CAFÉ</div>
+    <div>04-09-2026</div>
+  </div>
+
+  <div class="gmat-wrap">
+    <div class="section">JOGOS DO CAFÉ</div>
+    <h1 class="page-title">GMAT — 5 desafios para aquecer o raciocínio</h1>
+    <div class="subtitle">Questões demonstrativas. Meta: 10–12 minutos.</div>
+
+    <div class="question">
+      <div class="question-type">1. QUANT — MÉDIO</div>
+      <div class="question-text">Uma empresa aumenta o preço em 40% e depois concede desconto de 25%. Qual é a variação final?</div>
+      <div class="options">A) +5%<br>B) +10%<br>C) 0%<br>D) -5%<br>E) +15%</div>
+    </div>
+
+    <div class="question">
+      <div class="question-type">2. QUANT — DIFÍCIL</div>
+      <div class="question-text">Se x + y = 20 e xy = 96, qual é o valor de x² + y²?</div>
+      <div class="options">A) 192<br>B) 208<br>C) 224<br>D) 256<br>E) 304</div>
+    </div>
+
+    <div class="question">
+      <div class="question-type">3. CRITICAL REASONING — MÉDIO</div>
+      <div class="question-text">Qual informação mais enfraquece uma decisão baseada apenas na ausência de anúncio do concorrente?</div>
+      <div class="options">A) Equipe experiente<br>B) Clientes interessados<br>C) Concorrente já possui versão pronta<br>D) Mercado cresceu<br>E) Treinamento será necessário</div>
+    </div>
+
+    <div class="question">
+      <div class="question-type">4. CRITICAL REASONING — DIFÍCIL</div>
+      <div class="question-text">Qual evidência mais fortalece a conclusão de que uma campanha reduziu cancelamentos?</div>
+      <div class="options">A) Maior alcance<br>B) Preço inalterado<br>C) Apenas expostos melhoraram<br>D) Redes sociais elogiaram<br>E) Novas unidades abriram</div>
+    </div>
+
+    <div class="question">
+      <div class="question-type">5. DATA INSIGHTS — DIFÍCIL</div>
+      <div class="question-text">Qual unidade respondeu pela maior parcela do crescimento total de receita?</div>
+      <div class="options">A) Unidade A<br>B) Unidade B<br>C) Unidade C<br>D) Todas iguais<br>E) Não é possível determinar</div>
+    </div>
+
+    <div class="answer-box">
+      <div class="section">GABARITO — VIRE O CELULAR PARA CONFERIR</div>
+      <div class="answer">1. A &nbsp;&nbsp; 2. B &nbsp;&nbsp; 3. C &nbsp;&nbsp; 4. C &nbsp;&nbsp; 5. A</div>
+    </div>
+
+    <div class="red-box">
+      <div class="section">PLACAR</div>
+      <strong>5/5:</strong> excelente precisão. &nbsp;&nbsp;
+      <strong>4/5:</strong> muito bom. &nbsp;&nbsp;
+      <strong>3/5:</strong> revise o erro. &nbsp;&nbsp;
+      <strong>0–2/5:</strong> refaça com foco em estrutura.
+    </div>
+  </div>
+
+  <div class="footer"><span>Edição demonstrativa do Café</span><span>PÁGINA 4</span></div>
+</section>
+
+</div>
+</body>
+</html>

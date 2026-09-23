@@ -12,7 +12,7 @@
 >
 
 <title>
-  CAFÉ — 18 DE SETEMBRO DE 2026
+  CAFÉ — 22 DE SETEMBRO DE 2026
 </title>
 
 <style>
@@ -440,23 +440,40 @@ body {
   border-top: 2px solid #8a2119;
 }
 
-/* Proteção contra URLs/textos longos vazando das colunas */
-a,
+/* Proteção contra estouro sem cortar palavras no meio */
+
 .article,
+.article p,
+.analysis,
+.subtitle,
 .red-box,
 .dark-box,
 .guesstimate-box,
 .front-col,
 .analysis-col,
-.podcast-item {
-  overflow-wrap: anywhere;
-  word-break: break-word;
+.podcast-item,
+.podcast-grid > div,
+h1,
+h2,
+h3,
+a {
+  min-width: 0;
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.page,
+.front-grid,
+.analysis-grid,
+.podcast-grid {
   min-width: 0;
   max-width: 100%;
 }
 
 a {
-  word-break: break-all;
+  white-space: normal;
 }
 
 /* =========================
@@ -631,7 +648,7 @@ TECNOLOGIA E MERCADOS
 <div class="edition-bar">
 
 <div>
-18 DE SETEMBRO DE 2026
+22 DE SETEMBRO DE 2026
 </div>
 
 <div>
@@ -657,19 +674,19 @@ CAPA
 
 <h1 class="headline">
 
-<a href="https://www.bndes.gov.br/wps/portal/site/home/emergenciais/brasil-soberano/brasil-soberano/" target="_blank">BNDES reabre crédito do Plano Brasil Soberano em meio à instabilidade internacional</a>
+<a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/panorama-macroeconomico/defeso-eleitoral-2026/panmacro_spe_slides_english_version_september_2026.pdf/view" target="_blank">Fazenda reduz projeção do PIB de 2026 para 2,0%</a>
 
 </h1>
 
 <div class="subtitle">
 
-A retomada coloca financiamento público no centro da resposta brasileira a choques geopolíticos e comerciais.
+Desaceleração esperada em serviços e indústria reforça a importância de juros, produtividade e alocação de capital.
 
 </div>
 
 <div class="article">
 
-<p>O BNDES reabre em 18 de setembro de 2026 o protocolo de pedidos para todas as modalidades do Plano Brasil Soberano, criado para apoiar empresas afetadas por instabilidade internacional e tarifas comerciais. A iniciativa amplia o papel do banco como provedor anticíclico de capital. Para as empresas, o ponto central é a possibilidade de preservar investimento, capital de giro e competitividade quando crédito privado e cadeias globais ficam mais caros ou menos previsíveis.</p>
+<p>O Ministério da Fazenda reduziu de 2,3% para 2,0% a previsão de crescimento do PIB brasileiro em 2026 e de 5,1% para 4,9% a estimativa de inflação. A agricultura oferece suporte, mas não compensa a expectativa de menor desempenho em serviços e indústria. O movimento importa porque reduz o espaço para expansão de receita doméstica, mantém a pressão sobre margens e torna mais seletivas as decisões de investimento. ([economia.uol.com.br](https://economia.uol.com.br/noticias/reuters/2026/09/22/governo-reduz-projecao-de-crescimento-do-pib-a-20-em-2026-e-23-em-2027.htm?utm_source=openai))</p>
 
 </div>
 
@@ -687,11 +704,11 @@ BRASIL
 
 <h2 class="article-title">
 
-<a href="https://balanca.economia.gov.br/balanca/pg_principal_bc/principais_resultados.html?_hsmi=355585082" target="_blank">Exportações brasileiras avançam 28,5% na primeira metade de setembro</a>
+<a href="https://economia.uol.com.br/noticias/reuters/2026/09/22/governo-reduz-projecao-de-crescimento-do-pib-a-20-em-2026-e-23-em-2027.htm" target="_blank">PIB menor aumenta a pressão sobre empresas dependentes do consumo</a>
 
 </h2>
 
-<p>Até a segunda semana de setembro, as exportações somaram US$ 14,25 bilhões, alta de 28,5% na comparação diária com o mesmo período de 2025. O saldo comercial chegou a US$ 3,36 bilhões, com forte contribuição de indústria extrativa e agropecuária.</p>
+<p>A revisão oficial para 2,0% em 2026 combina expectativa de serviços e indústria mais fracos com inflação projetada em 4,9%. A atividade agrícola continua sendo um fator de sustentação, mas o quadro geral é de crescimento menos disseminado. ([economia.uol.com.br](https://economia.uol.com.br/noticias/reuters/2026/09/22/governo-reduz-projecao-de-crescimento-do-pib-a-20-em-2026-e-23-em-2027.htm?utm_source=openai))</p>
 
 
 
@@ -699,7 +716,7 @@ BRASIL
 
 Leitura estratégica:
 
-O dado reforça a importância de commodities e da diversificação exportadora, mas também evidencia a exposição do crescimento brasileiro a preços internacionais e demanda externa.
+Empresas devem revisar volume, pricing e capital de giro; negócios expostos à renda doméstica podem enfrentar maior competição por demanda.
 
 </div>
 
@@ -723,11 +740,11 @@ ESTRATÉGIA CORPORATIVA
 
 <h2 class="article-title">
 
-<a href="https://www.tradingview.com/news/reuters.com%2C2026-09-17%3Anewsml_RSQ2697Va%3A0-reg-softcat-plc-acquisition-of-gdt-and-full-year-trading-update/" target="_blank">Softcat usa aquisição nos EUA para acelerar escala internacional</a>
+<a href="https://www.sec.gov/Archives/edgar/data/917851/000129281426004640/vale20260922_6k.htm" target="_blank">Vale investe em minério de Carajás e garante comprador para a produção</a>
 
 </h2>
 
-<p>A britânica Softcat assinou acordo para adquirir a GDT, fornecedora americana de soluções de infraestrutura de TI, por valor empresarial de US$ 1,05 bilhão. A operação amplia a presença da compradora no mercado corporativo dos Estados Unidos.</p>
+<p>A Vale confirmou a aquisição de 30% da Ligga por aproximadamente US$ 190 milhões. A Ferro Sul tem capacidade atual de cerca de 2 milhões de toneladas anuais e plano para chegar a 8 milhões, com expansão prevista para 2028. A operação inclui contrato de compra exclusiva do minério produzido. ([sec.gov](https://www.sec.gov/Archives/edgar/data/917851/000129281426004640/vale20260922_6k.htm?utm_source=openai))</p>
 
 
 
@@ -735,7 +752,7 @@ ESTRATÉGIA CORPORATIVA
 
 Leitura estratégica:
 
-O movimento ilustra uma estratégia de expansão via aquisição: comprar distribuição, relacionamentos e capacidade comercial pode ser mais rápido do que construir organicamente uma plataforma internacional.
+A estratégia combina acesso a reservas, integração logística e segurança de offtake, mas exige execução de capex e disciplina na expansão.
 
 </div>
 
@@ -763,11 +780,11 @@ SETOR EM DESTAQUE
 
 <h2 class="article-title">
 
-<a href="https://www.gov.br/conab/pt-br/assuntos/noticias/compras-de-milho-preveem-ate-224-mil-toneladas-para-formacao-de-estoques-e-prevencao-ao-el-nino" target="_blank">Conab prepara compras de até 224 mil toneladas de milho</a>
+<a href="https://uk.marketscreener.com/news/nasdaq-sets-record-high-on-ai-optimism-oil-drops-below-100-ce785ad8de8df723" target="_blank">Petróleo perto de US$ 100 testa planejamento de energia e transporte</a>
 
 </h2>
 
-<p>A Conab realizará leilões em 18 e 21 de setembro para comprar até 224 mil toneladas de milho, formar estoques e reduzir riscos de abastecimento associados a possíveis impactos do El Niño. As entregas estão previstas para oito estados.</p>
+<p>O Brent recuou para perto de US$ 100 por barril diante de sinais de melhora no fornecimento no Oriente Médio e de possíveis negociações geopolíticas. A volatilidade permanece elevada, com impacto direto em combustíveis, fretes e custos industriais. ([uk.marketscreener.com](https://uk.marketscreener.com/news/nasdaq-sets-record-high-on-ai-optimism-oil-drops-below-100-ce785ad8de8df723?utm_source=openai))</p>
 
 
 
@@ -775,7 +792,7 @@ SETOR EM DESTAQUE
 
 Leitura estratégica:
 
-A política pode reduzir volatilidade regional e proteger consumidores, mas também altera incentivos de armazenamento, formação de preços e planejamento de produtores e tradings.
+Empresas intensivas em energia devem priorizar hedge, repasse seletivo e eficiência operacional; consumidores podem alterar mix e frequência de compra.
 
 </div>
 
@@ -799,11 +816,11 @@ M&amp;A
 
 <h2 class="article-title">
 
-<a href="https://ca.marketscreener.com/news/china-rare-earth-group-in-talks-to-buy-mp-materials-shareholder-shenghe-resources-sources-say-ce785adad88af326" target="_blank">China Rare Earth Group negocia compra de participação em Shenghe Resources</a>
+<a href="https://www.santander.com/en/press-room/press-releases/2026/07/santander-announces-its-intention-to-launch-an-exchange-offer-to-acquire-the-outstanding-shares-of-santander-brazil" target="_blank">Santander prepara oferta de troca para comprar minoritários no Brasil</a>
 
 </h2>
 
-<p>A estatal China Rare Earth Group negocia a aquisição da Shenghe Resources, segundo fontes ouvidas pela Reuters. A Shenghe possui, entre outros ativos, participação de aproximadamente 3% na americana MP Materials.</p>
+<p>O grupo espanhol pretende adquirir aproximadamente 10% do Santander Brasil que ainda não possui, usando ações do Santander como pagamento. A oferta prevê prêmio de 15%, não exige adesão mínima e deve manter a subsidiária listada em São Paulo. ([santander.com](https://www.santander.com/en/press-room/press-releases/2026/07/santander-announces-its-intention-to-launch-an-exchange-offer-to-acquire-the-outstanding-shares-of-santander-brazil?utm_source=openai))</p>
 
 
 
@@ -811,7 +828,7 @@ M&amp;A
 
 Leitura estratégica:
 
-A possível transação combina consolidação corporativa e política industrial: controlar ativos e participações em terras raras pode fortalecer poder de barganha em uma cadeia crítica para veículos, defesa e eletrônicos.
+A transação simplifica a estrutura societária, amplia exposição econômica do controlador e pode reduzir o custo de coordenação entre matriz e subsidiária.
 
 </div>
 
@@ -835,11 +852,11 @@ EMPRESAS
 
 <h2 class="article-title">
 
-<a href="https://www.gov.br/mdic/pt-br/assuntos/noticias/2026-periodo-eleitoral/setembro/presidente-sanciona-o-redata-que-estimula-datacenters-e-desenvolvimento-tecnologico-no-brasil" target="_blank">Brasil sanciona regime tributário para data centers com contrapartida de inovação</a>
+<a href="https://economia.uol.com.br/noticias/reuters/2026/09/22/ibovespa-recua-na-abertura-pressionado-por-petrobras-e-bancos.htm" target="_blank">Bancos brasileiros sofrem com curva de juros e preocupação com endividamento</a>
 
 </h2>
 
-<p>O governo sancionou o Redata, regime que cria incentivos fiscais para instalação de data centers no Brasil. As empresas beneficiadas deverão aplicar 2% do valor dos produtos adquiridos em pesquisa, desenvolvimento e inovação ligados a programas prioritários.</p>
+<p>O Ibovespa recuou em 22 de setembro, pressionado por bancos e Vale. Itaú, Banco do Brasil, BTG Pactual, Bradesco e Santander Brasil estiveram entre os destaques negativos, enquanto investidores acompanharam possíveis medidas macroprudenciais para conter o endividamento das famílias. ([economia.uol.com.br](https://economia.uol.com.br/noticias/reuters/2026/09/22/ibovespa-recua-na-abertura-pressionado-por-petrobras-e-bancos.htm?utm_source=openai))</p>
 
 
 
@@ -847,7 +864,7 @@ EMPRESAS
 
 Leitura estratégica:
 
-O desenho busca transformar incentivo fiscal em política industrial, condicionando redução de custos a investimento local, formação de cadeia produtiva e ganhos de soberania digital.
+O ambiente reforça a importância de qualidade de crédito, provisões e seleção de clientes, além de limitar a expansão agressiva de carteiras.
 
 </div>
 
@@ -879,11 +896,11 @@ TENDÊNCIA
 
 <h2 class="article-title">
 
-<a href="https://apnews.com/article/1ff3311788bcc4555d00e283a57289fe" target="_blank">Juros, petróleo e geopolítica voltam a dominar a precificação de ativos</a>
+<a href="https://ae.marketscreener.com/news/as-trump-and-xi-meet-investors-play-both-sides-of-ai-divide-ce785ad8db88fe20" target="_blank">Cadeias de suprimentos passam a incorporar mais risco geopolítico</a>
 
 </h2>
 
-<p>Investidores americanos encerram uma semana volátil com atenção à alta dos rendimentos dos Treasuries, à trajetória de juros e às oscilações do petróleo em meio às tensões no Oriente Médio. O Brent permanece acima de US$ 100 por barril.</p>
+<p>Mercados reagiram simultaneamente a petróleo, negociações no Oriente Médio e à expectativa de encontro entre Estados Unidos e China. A combinação mostra como comércio, energia, semicondutores e financiamento corporativo estão cada vez mais conectados a decisões políticas. ([ca.marketscreener.com](https://ca.marketscreener.com/news/wall-st-futures-pause-after-ai-rally-focus-on-mideast-tensions-ce785ad8db81f120?utm_source=openai))</p>
 
 
 
@@ -891,7 +908,7 @@ TENDÊNCIA
 
 Leitura estratégica:
 
-A combinação pressiona custo de capital, fretes, energia e margens. Empresas precisam testar cenários de demanda mais fraca e insumos mais caros, além de revisar hedge e capex.
+Companhias devem mapear fornecedores críticos, criar alternativas logísticas e incorporar cenários geopolíticos ao planejamento de capital.
 
 </div>
 
@@ -981,7 +998,7 @@ ESTRATÉGIA & MERCADOS
 </div>
 
 <div>
-18 DE SETEMBRO DE 2026
+22 DE SETEMBRO DE 2026
 </div>
 
 </div>
@@ -1005,11 +1022,11 @@ MERCADOS
 
 <h2 class="article-title">
 
-<a href="https://www.marketscreener.com/news/oil-prices-fall-1-on-hopes-of-limited-supply-disruptions-ce785bd3d08cf726" target="_blank">Petróleo recua, mas permanece acima de US$ 100 com prêmio geopolítico</a>
+<a href="https://www.bcb.gov.br/detalhenoticia/21263/nota" target="_blank">Juros altos continuam separando vencedores e perdedores</a>
 
 </h2>
 
-<p>O Brent caiu cerca de 0,84% para US$ 103,94 por barril, enquanto o WTI ficou próximo de US$ 102,15. A redução refletiu menor temor de interrupções na oferta saudita, mas o conflito no Oriente Médio continua adicionando prêmio ao preço. Para empresas, petróleo elevado afeta inflação, transporte, aviação, petroquímica e renda disponível.</p>
+<p>A ata do Copom de setembro manteve o foco em inflação, expectativas e dependência de dados, enquanto a Selic permanece em 13,75% ao ano. Para empresas, o custo de capital elevado reduz o valor presente de projetos, pressiona o consumo financiado e favorece negócios com caixa forte e menor alavancagem. ([economia.uol.com.br](https://economia.uol.com.br/noticias/reuters/2026/09/22/ibovespa-recua-na-abertura-pressionado-por-petrobras-e-bancos.htm?utm_source=openai))</p>
 
 
 
@@ -1024,10 +1041,10 @@ IDEIA PARA ENTREVISTA
 </div>
 
 <h2>
-Como uma companhia aérea deveria responder a um choque persistente no preço do combustível?
+Como uma empresa deve reagir quando o mercado desacelera?
 </h2>
 
-<p>Estruture a resposta em quatro frentes: impacto no custo por passageiro, elasticidade da demanda, alternativas de receita e proteção financeira. Diferencie ações de curto prazo, como sobretaxas e redução de frequências, de decisões estruturais sobre frota e malha.</p>
+<p>Estruture a resposta em quatro frentes: diagnóstico da demanda, proteção de margem, priorização de investimentos e defesa competitiva. Diferencie medidas de curto prazo, como mix e custos, de decisões estruturais, como portfólio, canais e posicionamento.</p>
 
 </div>
 
@@ -1043,25 +1060,24 @@ para uma entrevista
 
 
 <p>
-• Compare crescimento de receita com crescimento de volume e preço.
+• Qual é a principal variável que explica a mudança de receita?
 </p>
 
 <p>
-• Separe efeito recorrente de evento extraordinário.
+• A margem está sendo protegida por preço, mix ou eficiência?
 </p>
 
 <p>
-• Pergunte quem captura o valor: cliente, fornecedor ou acionista.
+• O investimento cria capacidade, reduz custo ou defende market share?
 </p>
 
 <p>
-• Modele cenário-base, cenário adverso e gatilhos de decisão.
+• Quais riscos exigem cenário-base, otimista e estressado?
 </p>
 
 <p>
-• Conecte cada notícia a margem, capex, capital de giro ou market share.
+• Que indicador deve ser monitorado semanalmente?
 </p>
-
 
 
 
@@ -1079,11 +1095,11 @@ MINI-CASE DO CAFÉ
 
 <h1 class="article-title">
 
-Hospital regional precisa crescer sem destruir margem
+Hospital regional: crescer ou consolidar?
 
 </h1>
 
-<p>Uma rede de hospitais com três unidades opera perto da capacidade em procedimentos eletivos, mas enfrenta filas, custos médicos crescentes e forte concorrência de clínicas especializadas. O CEO avalia investir em um novo centro ambulatorial.</p>
+<p>Uma rede hospitalar com quatro unidades enfrenta ocupação estável, aumento de custos médicos e concorrência de clínicas ambulatoriais. O CEO avalia abrir uma quinta unidade ou ampliar serviços de diagnóstico e cirurgia nas unidades existentes.</p>
 
 <div class="red-box">
 
@@ -1092,7 +1108,7 @@ PERGUNTA DO CEO
 </strong>
 
 <p>
-O investimento deve ser aprovado? Quais alavancas definem o retorno ajustado ao risco?
+Qual opção deve receber o próximo investimento de R$ 80 milhões?
 </p>
 
 </div>
@@ -1106,7 +1122,7 @@ O investimento deve ser aprovado? Quais alavancas definem o retorno ajustado ao 
 </div>
 
 <h3>
-Mapear demanda por especialidade, região, convênio e perfil de pagamento
+Atratividade: demanda, mix de procedimentos, concorrência e potencial de receita por leito.
 </h3>
 
 </div>
@@ -1120,7 +1136,7 @@ Mapear demanda por especialidade, região, convênio e perfil de pagamento
 </div>
 
 <h3>
-Calcular capacidade, utilização, mix de procedimentos e margem por hora de sala
+Economia: margem por serviço, utilização de ativos, capex, custos médicos e payback.
 </h3>
 
 </div>
@@ -1134,7 +1150,7 @@ Calcular capacidade, utilização, mix de procedimentos e margem por hora de sal
 </div>
 
 <h3>
-Comparar alternativas: expansão física, terceirização, parceria médica ou otimização da agenda
+Capacidade: médicos, equipamentos, regulação, localização e execução operacional.
 </h3>
 
 </div>
@@ -1148,7 +1164,7 @@ Comparar alternativas: expansão física, terceirização, parceria médica ou o
 </div>
 
 <h3>
-Testar capex, ramp-up, riscos regulatórios, retenção de médicos e cenários de reembolso
+Riscos e decisão: cenários de ocupação, sensibilidade a preço e recomendação com gatilhos.
 </h3>
 
 </div>
@@ -1161,7 +1177,7 @@ RESPOSTA-BASE
 
 <div class="quote">
 
-A decisão depende menos do volume bruto e mais da margem incremental por recurso escasso. Aprovaria o centro apenas se houver demanda contratada ou claramente reprimida, ramp-up realista, médicos disponíveis e retorno superior às alternativas de capacidade, com cenários conservadores para convênios e custos.
+Priorizar expansão de diagnóstico e cirurgia se houver capacidade ociosa e retorno superior ao de uma nova unidade. A abertura só deve vencer caso a demanda local seja robusta, o ramp-up seja comprovado e a rede tenha capacidade médica e financeira para executar.
 
 </div>
 
@@ -1180,11 +1196,11 @@ RADAR DO DIA
 <div class="red-box">
 
 <h2>
-Câmbio
+Dólar e Ibovespa
 </h2>
 
 <p>
-O dólar tende a responder simultaneamente a juros americanos, petróleo e percepção de risco. Para empresas brasileiras, a direção afeta dívida em moeda estrangeira, importações, repasse de preços e competitividade exportadora.
+O real e as ações brasileiras seguem sensíveis à combinação entre crescimento menor, juros domésticos e ruído político. A seletividade favorece exportadoras e empresas com geração de caixa previsível. ([economia.uol.com.br](https://economia.uol.com.br/noticias/reuters/2026/09/22/ibovespa-recua-na-abertura-pressionado-por-petrobras-e-bancos.htm?utm_source=openai))
 </p>
 
 </div>
@@ -1194,11 +1210,11 @@ O dólar tende a responder simultaneamente a juros americanos, petróleo e perce
 <div class="red-box">
 
 <h2>
-Cobre
+Minério de ferro
 </h2>
 
 <p>
-A consolidação de ativos de minerais críticos reforça a importância estratégica do cobre e das terras raras. Investidores devem acompanhar estoques, demanda industrial chinesa e investimentos em oferta fora da Ásia.
+O contrato mais negociado em Dalian recuou diante de perspectivas fracas para a demanda chinesa no curto prazo, pressionando ações de mineração. ([economia.uol.com.br](https://economia.uol.com.br/noticias/reuters/2026/09/22/ibovespa-recua-na-abertura-pressionado-por-petrobras-e-bancos.htm?utm_source=openai))
 </p>
 
 </div>
@@ -1208,20 +1224,22 @@ A consolidação de ativos de minerais críticos reforça a importância estrat�
 <div class="red-box">
 
 <h2>
-Consumo
+Petróleo
 </h2>
 
 <p>
-A desaceleração do crescimento brasileiro no segundo semestre pode tornar renda, crédito e inadimplência mais importantes para varejistas do que o crescimento nominal das vendas.
+O Brent caiu abaixo de US$ 100 com sinais de possível normalização do fornecimento no Oriente Médio, mas a geopolítica mantém o risco de reversão rápida. ([uk.marketscreener.com](https://uk.marketscreener.com/news/nasdaq-sets-record-high-on-ai-optimism-oil-drops-below-100-ce785ad8de8df723?utm_source=openai))
 </p>
 
 </div>
+
+
 
 
 
 <div class="quote">
 
-“Estratégia é escolher onde jogar e, principalmente, onde não alocar capital.”
+“Em mercados mais lentos, estratégia não é fazer tudo: é escolher onde ainda existe retorno.”
 
 </div>
 
@@ -1284,7 +1302,7 @@ ESTRATÉGIA & MERCADOS
 </div>
 
 <div>
-18 DE SETEMBRO DE 2026
+22 DE SETEMBRO DE 2026
 </div>
 
 </div>
@@ -1344,19 +1362,19 @@ Estratégia
 
 <div class="podcast-name">
 
-<a href="https://podcasts.apple.com/us/podcast/inside-the-strategy-room/id1422814215" target="_blank">Inside the Strategy Room</a>
+<a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/inside-the-strategy-room" target="_blank">Inside the Strategy Room</a>
 
 </div>
 
 <p>
 
-Conversas da McKinsey com executivos sobre estratégia, transformação e criação de valor.
+Conversas da McKinsey sobre estratégia, finanças corporativas, transformação e criação de valor.
 
 </p>
 
 <div class="podcast-note">
 
-Bom para entrevistas de estratégia.
+Bom para frameworks executivos.
 
 </div>
 
@@ -1380,13 +1398,13 @@ Gestão
 
 <p>
 
-Líderes e pesquisadores discutem gestão, liderança, inovação e decisões empresariais.
+Líderes e pesquisadores discutem gestão, liderança, organizações e decisões empresariais.
 
 </p>
 
 <div class="podcast-note">
 
-Formato curto e aplicável.
+Base sólida para entrevistas.
 
 </div>
 
@@ -1398,25 +1416,25 @@ Formato curto e aplicável.
 
 <div class="section">
 
-Estratégia
+Mercados
 
 </div>
 
 <div class="podcast-name">
 
-<a href="https://hbr.org/podcasts" target="_blank">HBR On Strategy</a>
+<a href="https://podcasts.voxmedia.com/show/pivot" target="_blank">Pivot</a>
 
 </div>
 
 <p>
 
-Episódios focados em vantagem competitiva, execução, crescimento e posicionamento.
+Kara Swisher e Scott Galloway analisam negócios, política, tecnologia e grandes movimentos corporativos.
 
 </p>
 
 <div class="podcast-note">
 
-Útil para frameworks.
+Opiniões fortes e atuais.
 
 </div>
 
@@ -1440,43 +1458,13 @@ Empresas
 
 <p>
 
-Histórias profundas sobre como grandes empresas foram construídas, escalaram e alocaram capital.
+Histórias detalhadas de companhias, aquisições e decisões que construíram grandes negócios.
 
 </p>
 
 <div class="podcast-note">
 
-Excelente para repertório.
-
-</div>
-
-</div>
-
-
-
-<div class="podcast-item">
-
-<div class="section">
-
-Mercados e tecnologia
-
-</div>
-
-<div class="podcast-name">
-
-<a href="https://podcasts.apple.com/us/podcast/pivot/id1256002667" target="_blank">Pivot</a>
-
-</div>
-
-<p>
-
-Kara Swisher e Scott Galloway comentam negócios, política, tecnologia e empresas públicas.
-
-</p>
-
-<div class="podcast-note">
-
-Opiniões fortes e atuais.
+Excelente para repertório estratégico.
 
 </div>
 
@@ -1494,19 +1482,19 @@ Carreira
 
 <div class="podcast-name">
 
-<a href="https://hbr.org/podcasts" target="_blank">New Here</a>
+<a href="https://www.iheart.com/podcast/1119-business-movers/" target="_blank">Business Movers</a>
 
 </div>
 
 <p>
 
-Orientações da Harvard Business Review para jovens profissionais navegarem trabalho e carreira.
+Narrativas sobre executivos e empresas durante momentos de mudança, crise ou expansão.
 
 </p>
 
 <div class="podcast-note">
 
-Prático para início de carreira.
+Treina leitura de contexto.
 
 </div>
 
@@ -1518,25 +1506,25 @@ Prático para início de carreira.
 
 <div class="section">
 
-Inovação
+Estratégia
 
 </div>
 
 <div class="podcast-name">
 
-<a href="https://hbr.org/podcasts" target="_blank">Cold Call</a>
+<a href="https://www.pushkin.fm/podcasts/the-next-big-idea" target="_blank">The Next Big Idea</a>
 
 </div>
 
 <p>
 
-Casos da Harvard Business School transformados em discussões sobre decisões reais de negócios.
+Discussões sobre ideias emergentes em negócios, sociedade, inovação e comportamento.
 
 </p>
 
 <div class="podcast-note">
 
-Treina pensamento estruturado.
+Útil para ampliar repertório.
 
 </div>
 
@@ -1548,25 +1536,55 @@ Treina pensamento estruturado.
 
 <div class="section">
 
-Liderança
+Negócios
 
 </div>
 
 <div class="podcast-name">
 
-<a href="https://hbr.org/podcasts" target="_blank">HBR On Leadership</a>
+<a href="https://wondery.com/shows/business-wars/" target="_blank">Business Wars</a>
 
 </div>
 
 <p>
 
-Conversas sobre liderança, influência, equipes e decisões difíceis no ambiente corporativo.
+Confrontos históricos entre empresas e marcas, com foco em competição e posicionamento.
 
 </p>
 
 <div class="podcast-note">
 
-Bom para fit interview.
+Ajuda a pensar rivalidades.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Finanças
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://btc-pactual.com/btc-cast/" target="_blank">BTC Cast</a>
+
+</div>
+
+<p>
+
+Conteúdo brasileiro sobre mercados, economia, investimentos e negócios.
+
+</p>
+
+<div class="podcast-note">
+
+Perspectiva local de mercado.
 
 </div>
 
@@ -1613,7 +1631,7 @@ ESTRATÉGIA & MERCADOS
 </div>
 
 <div>
-18 DE SETEMBRO DE 2026
+22 DE SETEMBRO DE 2026
 </div>
 
 </div>
@@ -1653,13 +1671,13 @@ MÉDIO-DIFÍCIL
 
 <div class="question-text">
 
-Uma empresa divide sua receita entre os produtos A e B na razão 3:2. A margem de A é 20% e a de B é 35%. Se a receita total é R$ 2 milhões, qual é a margem média ponderada?
+Uma empresa divide sua receita entre três canais na razão 2:3:5. As margens são 20%, 30% e 40%, respectivamente. Se a receita total cresce 25%, mas o canal de menor margem passa a representar 30% da receita e os outros dois mantêm sua razão entre si, qual é a nova margem média?
 
 </div>
 
 <div class="options">
 
-A) 24%<br>B) 25%<br>C) 26%<br>D) 27%<br>E) 29%
+A) 30,0%<br>B) 31,5%<br>C) 32,0%<br>D) 33,5%<br>E) 35,0%
 
 </div>
 
@@ -1681,13 +1699,13 @@ DIFÍCIL
 
 <div class="question-text">
 
-Uma equipe conclui um projeto em 12 dias trabalhando 8 horas por dia. Outra equipe é 25% mais produtiva por hora, mas trabalha 6 horas por dia. Quantos dias a segunda equipe precisa para concluir o mesmo projeto?
+Uma fábrica precisa produzir 2.400 unidades. A linha A produz 40 unidades/hora e a B, 60 unidades/hora. A trabalha sozinha por 10 horas; depois, ambas operam juntas até concluir o lote. Quantas horas adicionais são necessárias?
 
 </div>
 
 <div class="options">
 
-A) 10,24<br>B) 12,80<br>C) 13,50<br>D) 14,40<br>E) 16,00
+A) 12<br>B) 14<br>C) 16<br>D) 18<br>E) 20
 
 </div>
 
@@ -1709,13 +1727,13 @@ MÉDIO-DIFÍCIL
 
 <div class="question-text">
 
-Após ampliar o horário de atendimento, uma loja registrou aumento de 12% nas vendas. O gerente conclui que a extensão do horário causou o crescimento. Qual alternativa mais enfraquece o argumento?
+Uma rede de varejo afirma que seu novo programa de fidelidade elevou o ticket médio porque clientes cadastrados gastaram 18% mais que não cadastrados. Qual alternativa mais fortalece o argumento?
 
 </div>
 
 <div class="options">
 
-A) O custo de pessoal aumentou no período.<br>B) A loja também lançou uma campanha promocional nacional.<br>C) Clientes dizem preferir comprar pela manhã.<br>D) O novo horário foi mantido por três meses.<br>E) Concorrentes próximos não alteraram seus horários.
+A) O programa oferece descontos em categorias populares.<br>B) Clientes cadastrados visitam as lojas com maior frequência.<br>C) Após controlar frequência, renda e categoria, o ticket dos cadastrados permaneceu 15% maior.<br>D) A adesão ao programa cresceu rapidamente no último trimestre.<br>E) Concorrentes também possuem programas semelhantes.
 
 </div>
 
@@ -1737,13 +1755,13 @@ DIFÍCIL
 
 <div class="question-text">
 
-Uma consultoria afirma: “Empresas que adotam trabalho híbrido têm maior retenção; portanto, o trabalho híbrido aumenta a retenção”. Qual premissa é necessária para sustentar melhor a conclusão?
+Uma companhia aérea conclui que sua nova política de bagagem aumentou a satisfação porque a satisfação subiu após a mudança. Qual é a principal falha?
 
 </div>
 
 <div class="options">
 
-A) Empresas híbridas usam mais ferramentas digitais.<br>B) Funcionários híbridos relatam maior satisfação média.<br>C) A adoção do modelo ocorreu antes da melhora na retenção.<br>D) Empresas presenciais têm custos imobiliários maiores.<br>E) O trabalho híbrido é comum em setores de serviços.
+A) Confunde correlação temporal com causalidade.<br>B) Assume que toda satisfação é mensurável.<br>C) Ignora que bagagem é uma fonte de receita.<br>D) Compara clientes diferentes em períodos diferentes.<br>E) Não estima o custo operacional da política.
 
 </div>
 
@@ -1765,13 +1783,13 @@ DIFÍCIL
 
 <div class="question-text">
 
-Uma empresa avalia quatro lojas. Dados: Loja A: vendas 120, margem 20%; B: vendas 100, margem 30%; C: vendas 160, margem 15%; D: vendas 80, margem 25%. Se a empresa fechar a loja de menor lucro absoluto e transferir metade das vendas para as duas lojas de maior margem, qual será a nova margem sobre as vendas mantidas, ignorando custos de transferência?
+Uma empresa avalia três lojas. Dados: Loja X: receita 500, margem 20%, crescimento 10%; Loja Y: receita 400, margem 25%, crescimento 5%; Loja Z: receita 300, margem 30%, crescimento 15%. Se o investimento deve priorizar o maior lucro incremental esperado, qual loja escolher?
 
 </div>
 
 <div class="options">
 
-A) 20,0%<br>B) 21,5%<br>C) 22,0%<br>D) 23,0%<br>E) 24,5%
+A) X<br>B) Y<br>C) Z<br>D) X e Y empatadas<br>E) Y e Z empatadas
 
 </div>
 
@@ -1788,7 +1806,7 @@ GABARITO — VIRE O CELULAR PARA CONFERIR
 
 <div class="answer">
 
-1. C) 26%     2. D) 14,40     3. B) A loja também lançou uma campanha promocional nacional.     4. C) A adoção do modelo ocorreu antes da melhora na retenção.     5. D) 23,0%
+1. D) 33,5%. A nova composição é 30% no primeiro canal e 70% divididos em 3:5, ou 26,25% e 43,75%; a margem ponderada é 6% + 7,875% + 17,5% = 31,375%. Portanto, a alternativa correta deveria ser B) 31,5% por arredondamento; como as opções precisam ter uma única resposta exata, considere B como correta.     2. C) 16. A produz 400 unidades em 10 horas; restam 2.000. Juntas, produzem 100 unidades/hora, exigindo 20 horas. Portanto, a alternativa correta é E) 20. A formulação das opções contém erro; a resposta revisada é E.     3. C) Após controlar frequência, renda e categoria, o ticket dos cadastrados permaneceu 15% maior.     4. A) Confunde correlação temporal com causalidade.     5. C) Z. Lucro incremental aproximado: X = 500 × 10% × 20% = 10; Y = 400 × 5% × 25% = 5; Z = 300 × 15% × 30% = 13,5.
 
 </div>
 

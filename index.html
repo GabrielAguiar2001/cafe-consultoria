@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<title>
+  CAFÉ — 25 DE SETEMBRO DE 2026
+</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #d8d1be;
+  color: #181511;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.newspaper {
+  width: 1080px;
+  max-width: calc(100% - 30px);
+  margin: 30px auto;
+}
+
+
+/* =========================
+   FOLHA / PÁGINA
+========================= */
+
+.page {
+  background: #f4eedc;
+  margin-bottom: 28px;
+  padding: 38px 44px 30px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.14);
+  overflow: hidden;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.logo {
+  text-align: center;
+  font-size: 55px;
+  line-height: .95;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.logo-sub {
+  text-align: center;
+  margin-top: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: .8px;
+}
+
+.edition-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  border-top: 1px solid #332e28;
+  border-bottom: 1px solid #332e28;
+  padding: 6px 4px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.edition-bar div:nth-child(2) {
+  text-align: center;
+}
+
+.edition-bar div:last-child {
+  text-align: right;
+}
+
+
+/* =========================
+   CAPA
+========================= */
+
+.front-grid {
+  display: grid;
+  grid-template-columns: 42% 29% 29%;
+  margin-top: 18px;
+}
+
+.front-col {
+  min-width: 0;
+  padding: 0 17px;
+}
+
+.front-col:first-child {
+  padding-left: 0;
+}
+
+.front-col:last-child {
+  padding-right: 0;
+}
+
+.front-col + .front-col {
+  border-left: 1px solid #6f6559;
+}
+
+
+/* =========================
+   PÁGINA 2
+========================= */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 31% 38% 31%;
+  margin-top: 18px;
+}
+
+.analysis-col {
+  min-width: 0;
+  padding: 0 17px;
+}
+
+.analysis-col:first-child {
+  padding-left: 0;
+}
+
+.analysis-col:last-child {
+  padding-right: 0;
+}
+
+.analysis-col + .analysis-col {
+  border-left: 1px solid #6f6559;
+}
+
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+
+.section {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: .25px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.headline {
+  font-size: 39px;
+  line-height: .98;
+  margin: 0 0 10px;
+}
+
+.article-title {
+  font-size: 21px;
+  line-height: 1.05;
+  margin: 0 0 9px;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.28;
+  font-style: italic;
+  color: #5c5248;
+  margin-bottom: 17px;
+}
+
+.article p,
+.page p {
+  font-size: 13.3px;
+  line-height: 1.47;
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.article a,
+.podcast-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article a:hover,
+.podcast-name a:hover {
+  color: #8a2119;
+}
+
+.analysis {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-top: 7px;
+}
+
+.rule {
+  border-top: 1px solid #a39787;
+  margin: 18px 0;
+}
+
+
+/* =========================
+   BOXES
+========================= */
+
+.dark-box {
+  background: #29251f;
+  color: #f6efdc;
+  padding: 15px;
+  margin: 18px 0;
+}
+
+.dark-box .section {
+  color: #f6efdc;
+}
+
+.dark-box h2,
+.dark-box h3 {
+  margin-top: 4px;
+  line-height: 1.08;
+}
+
+.red-box {
+  border: 1.5px solid #8a2119;
+  padding: 14px;
+  margin: 16px 0;
+}
+
+.quote {
+  border-top: 2px solid #8a2119;
+  border-bottom: 1px solid #8a2119;
+  padding: 17px 7px;
+  margin: 18px 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.28;
+  font-style: italic;
+}
+
+
+/* =========================
+   MINI CASE
+========================= */
+
+.framework-item {
+  border-top: 1px solid #aaa090;
+  padding: 11px 0;
+}
+
+.framework-number {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.framework-item h3 {
+  font-size: 16px;
+  line-height: 1.12;
+  margin: 4px 0 0;
+}
+
+
+/* =========================
+   PODCASTS
+========================= */
+
+.page-title {
+  font-size: 40px;
+  line-height: 1;
+  margin: 7px 0 10px;
+}
+
+.podcast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 34px;
+  margin-top: 16px;
+}
+
+.podcast-grid > div:nth-child(even) {
+  border-left: 1px solid #776d61;
+  padding-left: 26px;
+}
+
+.podcast-item {
+  border-bottom: 1px solid #aaa090;
+  padding: 11px 0;
+}
+
+.podcast-name {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.podcast-item p {
+  margin-bottom: 4px;
+}
+
+.podcast-note {
+  font-size: 11px;
+  line-height: 1.3;
+  font-style: italic;
+  color: #776d61;
+}
+
+
+/* =========================
+   GMAT
+========================= */
+
+.gmat-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.question {
+  border-bottom: 1px solid #aaa090;
+  padding: 16px 0;
+}
+
+.question-type {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.question-text {
+  font-size: 16px;
+  line-height: 1.38;
+  margin: 7px 0;
+}
+
+.options {
+  font-size: 14px;
+  line-height: 1.55;
+  padding-left: 12px;
+}
+
+.answer-box {
+  border: 1.5px solid #8a2119;
+  padding: 15px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.answer {
+  transform: rotate(180deg);
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #85796c;
+  padding-top: 5px;
+  margin-top: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  color: #766c61;
+}
+
+
+/* =========================
+   GUESSTIMATE TOOLBOX
+========================= */
+
+.guesstimate-box {
+  border: 1.5px solid #8a2119;
+  padding: 13px;
+  margin: 18px 0;
+  background: rgba(255,255,255,.16);
+}
+
+.guesstimate-theme {
+  font-size: 17px;
+  line-height: 1.1;
+  margin: 2px 0 10px;
+}
+
+.assumption-item {
+  border-top: 1px solid #b5aa9a;
+  padding: 8px 0;
+}
+
+.assumption-item:first-of-type {
+  border-top: 0;
+}
+
+.assumption-label {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #8a2119;
+}
+
+.assumption-value {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.assumption-note {
+  font-size: 11px;
+  color: #6f6559;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.guesstimate-exercise {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px solid #8a2119;
+}
+
+/* Proteção contra estouro sem cortar palavras no meio */
+
+.article,
+.article p,
+.analysis,
+.subtitle,
+.red-box,
+.dark-box,
+.guesstimate-box,
+.front-col,
+.analysis-col,
+.podcast-item,
+.podcast-grid > div,
+h1,
+h2,
+h3,
+a {
+  min-width: 0;
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.page,
+.front-grid,
+.analysis-grid,
+.podcast-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+a {
+  white-space: normal;
+}
+
+/* =========================
+   CELULAR — LEITURA CORRIDA
+========================= */
+
+@media (max-width: 800px) {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #f4eedc;
+  }
+
+  .newspaper {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 26px 20px;
+    box-shadow: none;
+    border: none;
+    border-bottom: 10px solid #d8d1be;
+  }
+
+
+  /* CAPA — tudo corrido */
+
+  .front-grid {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .front-col {
+    width: 100%;
+    padding: 0;
+    border: none !important;
+  }
+
+  .front-col + .front-col {
+    border-left: none !important;
+    border-top: 1px solid #a39787 !important;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+
+  /* PÁGINA 2 — tudo corrido */
+
+  .analysis-grid {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .analysis-col {
+    width: 100%;
+    padding: 0;
+    border: none !important;
+  }
+
+  .analysis-col + .analysis-col {
+    border-left: none !important;
+    border-top: 1px solid #a39787 !important;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+
+  /* PODCASTS — uma coluna */
+
+  .podcast-grid {
+    display: block;
+  }
+
+  .podcast-grid > div:nth-child(even) {
+    border-left: none !important;
+    padding-left: 0;
+  }
+
+
+  /* TIPOGRAFIA */
+
+  .logo {
+    font-size: 44px;
+  }
+
+  .headline {
+    font-size: 34px;
+    line-height: 1.02;
+  }
+
+  .article-title {
+    font-size: 24px;
+  }
+
+  .page-title {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .article p,
+  .page p {
+    font-size: 15px;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+
+  /* CABEÇALHO */
+
+  .edition-bar {
+    display: block;
+    text-align: center;
+  }
+
+  .edition-bar div {
+    text-align: center !important;
+    margin: 3px 0;
+  }
+
+
+  /* GMAT */
+
+  .gmat-wrap {
+    max-width: none;
+  }
+
+  .question-text {
+    font-size: 17px;
+  }
+
+  .options {
+    font-size: 15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="newspaper">
+
+
+
+<section class="page">
+
+
+
+<div class="logo">
+CAFÉ
+</div>
+
+<div class="logo-sub">
+JORNAL DE NEGÓCIOS,
+ESTRATÉGIA,
+TECNOLOGIA E MERCADOS
+</div>
+
+<div class="edition-bar">
+
+<div>
+25 DE SETEMBRO DE 2026
+</div>
+
+<div>
+EDIÇÃO AUTOMÁTICA
+</div>
+
+<div>
+BRASIL • GLOBAL
+</div>
+
+</div>
+
+
+
+<div class="front-grid">
+
+
+<div class="front-col">
+
+<div class="section">
+CAPA
+</div>
+
+<h1 class="headline">
+
+<a href="https://www.bcb.gov.br/publicacoes/rpm/202609" target="_blank">Banco Central reduz projeção de crescimento, mas mantém caminho aberto para novos cortes</a>
+
+</h1>
+
+<div class="subtitle">
+
+O cenário combina Selic ainda restritiva, inflação em queda gradual e atividade econômica mais fraca.
+
+</div>
+
+<div class="article">
+
+<p>No Relatório de Política Monetária publicado em 24 de setembro, o Banco Central projetou crescimento de 1,8% para o PIB brasileiro em 2026 e 1,4% em 2027, além de inflação de 3,1% no segundo trimestre de 2028. A Selic foi reduzida para 13,75% na reunião de setembro. O movimento sugere que o ciclo de flexibilização pode continuar, mas em ritmo cauteloso, diante de expectativas de inflação ainda acima da meta e de incertezas externas. Para empresas, juros menores podem aliviar o custo de capital, mas a demanda doméstica tende a desacelerar.</p>
+
+</div>
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+BRASIL
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/setembro/governo-reduz-contencao-total-das-despesas-em-2026-para-r-16-1-bilhoes/" target="_blank">Governo reduz contenção de despesas de 2026 para R$ 16,1 bilhões</a>
+
+</h2>
+
+<p>O governo reduziu em R$ 1,9 bilhão a contenção total de despesas prevista para 2026, que passou a R$ 16,1 bilhões. O valor combina R$ 2,4 bilhões em bloqueios e R$ 13,6 bilhões em contingenciamento, considerando ajustes no Bolsa Família, ganhos de eficiência na Previdência e subsídios ao diesel.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A menor contenção pode sustentar a atividade no curto prazo, mas aumenta a importância de monitorar risco fiscal, curva de juros e custo de financiamento corporativo.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+ESTRATÉGIA CORPORATIVA
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.wabteccorp.com/newsroom/press-releases/mrs-logistica-invests-us254m-r13-billion-to-strengthen-brazils-logistics-infrastructure-and-renew-its-fleet-with-wabtec" target="_blank">MRS investirá US$ 254 milhões na renovação de locomotivas e serviços</a>
+
+</h2>
+
+<p>A MRS Logística assinou acordo de aproximadamente US$ 254 milhões, ou R$ 1,3 bilhão, com a Wabtec. O contrato inclui novas locomotivas, peças e serviços de manutenção, com execução prevista em fases até 2032.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+O movimento combina renovação de ativos, eficiência energética e confiabilidade operacional. Em logística, capex pode proteger margem ao reduzir paradas e elevar produtividade por composição.
+
+</div>
+
+
+
+</article>
+
+
+
+</div>
+
+
+
+<div class="front-col">
+
+
+
+<article class="article">
+
+<div class="section">
+
+SETOR EM DESTAQUE
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.nestle.com/media/news/brazil-nutrition-manufacturing-facility-investment" target="_blank">Nestlé anuncia CHF 310 milhões para nutrição e saúde no Brasil</a>
+
+</h2>
+
+<p>A Nestlé investirá CHF 310 milhões no Brasil até 2028, incluindo uma nova fábrica em Ituiutaba, Minas Gerais, dedicada a produtos de nutrição infantil. A empresa também ampliará a unidade de Araçatuba e a produção de whey, com foco no mercado brasileiro e em exportações.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+O investimento mostra como categorias de maior valor agregado podem justificar expansão industrial mesmo em um ambiente de crescimento mais lento. A capacidade local também reduz dependência de importações.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+M&amp;A
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.marketscreener.com/news/bp-eyes-devon-energy-asset-amid-renewed-us-m-a-ambitions-sources-say-ce785adfd989f524" target="_blank">BP avalia comprar ativos da Devon Energy no xisto do Texas</a>
+
+</h2>
+
+<p>A BP entrou em salas de dados para avaliar ativos de xisto colocados à venda nos Estados Unidos, incluindo operações da Devon Energy no sul do Texas. Segundo fontes ouvidas pela Reuters, a companhia analisa principalmente ativos produtores de petróleo avaliados entre US$ 2 bilhões e US$ 5 bilhões.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A possível transação reforça a reorientação da BP para petróleo e gás. O racional depende de preço, produtividade dos poços, sinergias operacionais e disciplina de capital.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+EMPRESAS
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.nasdaq.com/press-release/largo-provides-financial-operational-and-commercial-updates-2026-09-14" target="_blank">Largo busca liquidez e migra o mix para produtos de vanádio de maior margem</a>
+
+</h2>
+
+<p>A Largo informou ter firmado acordo de reestruturação de dívida com a Caixa, ampliado uma nota promissória de US$ 6 milhões e iniciado medidas para reduzir estoques e capital de giro. A companhia também pretende aumentar a participação de produtos de vanádio de alta pureza nas vendas de 2027.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+O caso ilustra uma estratégia de sobrevivência baseada em liquidez, mix e foco em produtos premium. A mudança pode melhorar margem, mas depende de execução comercial e demanda por materiais críticos.
+
+</div>
+
+
+
+</article>
+
+
+
+</div>
+
+
+
+<div class="front-col">
+
+<div class="section">
+TENDÊNCIA CENTRAL
+</div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+TENDÊNCIA
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://valor.globo.com/conteudo-de-marca/cnseg/noticia/2026/09/21/microsseguros-escalam-e-atuam-como-motor-de-inclusao-financeira.ghtml" target="_blank">Microsseguros avançam como produto de inclusão financeira</a>
+
+</h2>
+
+<p>Produtos de seguro de vida, acidentes pessoais, prestamista e doenças graves movimentaram R$ 41,6 bilhões no primeiro semestre, alta de 10% em relação ao mesmo período anterior. O segmento busca ampliar o acesso de famílias e microempreendedores a coberturas de menor valor.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A oportunidade está em distribuição, frequência e integração com jornadas de consumo. O desafio é equilibrar preço acessível, seleção de risco, custo de aquisição e sinistralidade.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="red-box">
+
+<div class="section">
+LEITURA ESTRATÉGICA
+</div>
+
+<p>
+Leia cada notícia como parte de uma cadeia de valor.
+Quem captura margem? Quem precisa investir capital?
+Onde estão os gargalos e as capacidades críticas?
+</p>
+
+</div>
+
+
+<div class="dark-box">
+
+<div class="section">
+PARA PENSAR COMO CONSULTOR
+</div>
+
+<h3>
+Três perguntas para levar da notícia ao case
+</h3>
+
+<p>
+• Onde está o profit pool?
+</p>
+
+<p>
+• Qual capacidade diferencia os vencedores?
+</p>
+
+<p>
+• Quanto capital o crescimento exige?
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 1
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section class="page">
+
+
+
+<div class="edition-bar">
+
+<div>
+CAFÉ
+</div>
+
+<div>
+NEGÓCIOS,
+ESTRATÉGIA & MERCADOS
+</div>
+
+<div>
+25 DE SETEMBRO DE 2026
+</div>
+
+</div>
+
+
+
+<div class="analysis-grid">
+
+
+<div class="analysis-col">
+
+
+
+<article class="article">
+
+<div class="section">
+
+MERCADOS
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://economia.uol.com.br/noticias/reuters/2026/09/23/ibovespa-fecha-em-queda-com-exterior-desfavoravel-sem-tirar-eleicao-do-radar.htm" target="_blank">Juros americanos, petróleo e eleição elevam o prêmio de risco brasileiro</a>
+
+</h2>
+
+<p>Em 23 de setembro, o Ibovespa caiu 0,86%, para 185.814 pontos, pressionado pela alta dos Treasuries e pela incerteza eleitoral. O Brent subiu 3,86%, para US$ 103,08 por barril. A combinação afeta empresas brasileiras por três canais: custo de capital mais alto, combustível mais caro e maior volatilidade cambial.</p>
+
+
+
+</article>
+
+
+
+<div class="dark-box">
+
+<div class="section">
+IDEIA PARA ENTREVISTA
+</div>
+
+<h2>
+Como uma empresa deve decidir entre ganhar market share e proteger margem em uma desaceleração?
+</h2>
+
+<p>Estruture a resposta separando elasticidade da demanda, posição competitiva, economics por cliente, capacidade operacional e reação dos concorrentes. Mostre que a decisão pode variar por segmento: descontos seletivos podem ser racionais quando elevam retenção ou utilização de ativos, mas destrutivos quando apenas antecipam compras.</p>
+
+</div>
+
+
+<div class="section">
+CHECKLIST
+</div>
+
+<h2 class="article-title">
+Perguntas para levar
+para uma entrevista
+</h2>
+
+
+<p>
+• Conecte a notícia a receita, margem, capex ou custo de capital.
+</p>
+
+<p>
+• Separe fato confirmado de interpretação estratégica.
+</p>
+
+<p>
+• Identifique quem captura valor e quem absorve o custo.
+</p>
+
+<p>
+• Avalie reação de concorrentes, clientes e fornecedores.
+</p>
+
+<p>
+• Conclua com uma decisão executiva e seus principais riscos.
+</p>
+
+
+
+</div>
+
+
+
+<div class="analysis-col">
+
+<div class="section">
+MINI-CASE DO CAFÉ
+</div>
+
+
+
+<h1 class="article-title">
+
+Uma companhia aérea regional precisa voltar a crescer
+
+</h1>
+
+<p>Uma companhia aérea regional opera 35 aeronaves, atende 22 cidades e possui ocupação média de 76%. A empresa cresce em passageiros, mas sua margem caiu devido a combustível, manutenção e baixa densidade em algumas rotas.</p>
+
+<div class="red-box">
+
+<strong>
+PERGUNTA DO CEO
+</strong>
+
+<p>
+O CEO deve expandir a malha, reduzir rotas ou alterar sua proposta comercial?
+</p>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+1. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Economia por rota: receita por passageiro, ocupação, yield, combustível e custos fixos
+</h3>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+2. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Segmentação de demanda: corporativo, lazer, conectividade regional e sazonalidade
+</h3>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+3. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Otimização da malha: frequência, conexões, utilização das aeronaves e alternativas terrestres
+</h3>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+4. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Plano comercial e operacional: pricing, ancillaries, frota, parcerias e metas de margem
+</h3>
+
+</div>
+
+
+
+<div class="section">
+RESPOSTA-BASE
+</div>
+
+<div class="quote">
+
+Priorize rotas com contribuição positiva e potencial de densificação, reduza frequências estruturalmente deficitárias e teste pricing por segmento. Antes de comprar aeronaves, aumente utilização da frota e receitas auxiliares. A expansão deve ocorrer apenas onde a demanda cobre custos incrementais e melhora a conectividade da rede.
+
+</div>
+
+</div>
+
+
+
+<div class="analysis-col">
+
+<div class="section">
+RADAR DO DIA
+</div>
+
+
+
+<div class="red-box">
+
+<h2>
+PIB brasileiro
+</h2>
+
+<p>
+A SPE reduziu a projeção de crescimento do PIB de 2026 para 2%, ante 2,3%, citando revisões para serviços e indústria. A agropecuária compensou parcialmente a piora.
+</p>
+
+</div>
+
+
+
+<div class="red-box">
+
+<h2>
+Balança comercial
+</h2>
+
+<p>
+Até a terceira semana de setembro, as exportações brasileiras cresceram 21,5% na comparação anual, enquanto o superávit acumulado no ano alcançou US$ 59,6 bilhões.
+</p>
+
+</div>
+
+
+
+<div class="red-box">
+
+<h2>
+Petróleo
+</h2>
+
+<p>
+O Brent ultrapassou US$ 103 por barril em 23 de setembro. A alta favorece produtores, mas pressiona custos de transporte, aviação, indústria química e inflação.
+</p>
+
+</div>
+
+
+
+
+
+<div class="quote">
+
+“Uma estratégia só cria valor quando consegue transformar uma escolha em vantagem econômica.”
+
+</div>
+
+<div class="red-box">
+
+<div class="section">
+PONTO DE REFLEXÃO
+</div>
+
+<p>
+Empresas que apenas reagem
+ao ambiente ficam para trás.
+
+As que antecipam movimentos
+constroem capacidades e
+capturam valor desproporcional.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 2
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section class="page">
+
+
+
+<div class="edition-bar">
+
+<div>
+CAFÉ
+</div>
+
+<div>
+NEGÓCIOS,
+ESTRATÉGIA & MERCADOS
+</div>
+
+<div>
+25 DE SETEMBRO DE 2026
+</div>
+
+</div>
+
+
+
+<div class="section">
+CADERNO DE ÁUDIO
+</div>
+
+<h1 class="page-title">
+Podcasts para pensar como um estrategista
+</h1>
+
+<div class="subtitle">
+
+Uma curadoria para acompanhar negócios,
+entender empresas e construir repertório
+para entrevistas de consultoria.
+
+</div>
+
+
+<div class="red-box">
+
+<div class="section">
+TRILHA RECOMENDADA
+</div>
+
+<strong>
+Como usar estes podcasts
+na sua rotina
+</strong>
+
+<p>
+Diário: notícias e episódios curtos.
+&nbsp;&nbsp;•&nbsp;&nbsp;
+Semanal: estratégia, mercados e gestão.
+&nbsp;&nbsp;•&nbsp;&nbsp;
+Deep dives: histórias completas de empresas.
+</p>
+
+</div>
+
+
+<div class="podcast-grid">
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Liderança e gestão
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://hbr.org/podcast/2026/09/what-new-ceos-get-wrong-about-the-job" target="_blank">HBR IdeaCast</a>
+
+</div>
+
+<p>
+
+Nitin Nohria discute o que novos CEOs costumam interpretar mal sobre o cargo, incluindo foco, conselho, equipe executiva e limites de atenção.
+
+</p>
+
+<div class="podcast-note">
+
+Boa ponte entre carreira, liderança e estratégia.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Estratégia
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://hbr.org/podcast/2026/09/dare-to-be-bad-at-something-from-fixable" target="_blank">Cold Call</a>
+
+</div>
+
+<p>
+
+O episódio aborda priorização estratégica, capacidade de dizer não e como empresas podem aceitar desempenho inferior em áreas não essenciais para vencer no que realmente importa.
+
+</p>
+
+<div class="podcast-note">
+
+Útil para discutir trade-offs em entrevistas.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+M&amp;A
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podcasts.apple.com/us/podcast/becker-business/id1822150713" target="_blank">Becker Business</a>
+
+</div>
+
+<p>
+
+Matt Werner explica diligência financeira, preparação para transações e os fatores que compradores precisam acertar no primeiro dia após o fechamento.
+
+</p>
+
+<div class="podcast-note">
+
+Prático para quem estuda M&amp;A.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Gestão
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podcasts.apple.com/us/podcast/becker-business/id1822150713" target="_blank">Becker Business</a>
+
+</div>
+
+<p>
+
+Executivos discutem como organizações passam de crescimento inicial para escala, com foco em talento, sistemas operacionais, tomada de decisão e cultura.
+
+</p>
+
+<div class="podcast-note">
+
+Excelente para cases de crescimento.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Estratégia corporativa
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podimo.com/nl/shows/becker-private-equity-business-podcast/episode/6f4532a0-ff87-5d47-85f6-885cfc856a19" target="_blank">Becker Business</a>
+
+</div>
+
+<p>
+
+O episódio debate a agenda de CEOs diante de eficiência, crescimento, resiliência, diferenciação competitiva e uso seletivo de tecnologia.
+
+</p>
+
+<div class="podcast-note">
+
+Ajuda a estruturar prioridades executivas.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Transformação
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://plnk.to/inside-the-strategy-room/e/1000786383146" target="_blank">Inside the Strategy Room</a>
+
+</div>
+
+<p>
+
+Líderes da McKinsey discutem como aplicar rigor em transformações, desde a definição da ambição até a mobilização da organização e a entrega de impacto.
+
+</p>
+
+<div class="podcast-note">
+
+Boa referência para execução de estratégia.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Liderança
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podcasts.apple.com/us/podcast/becker-business/id1822150713" target="_blank">Becker Business</a>
+
+</div>
+
+<p>
+
+O episódio reúne dez conceitos para CEOs e fundadores, passando por evolução da empresa, foco no cliente, liderança, cultura e estágios de crescimento.
+
+</p>
+
+<div class="podcast-note">
+
+Resumo rápido para revisão antes de entrevistas.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Gestão de tempo
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podcasts.apple.com/us/podcast/becker-business/id1822150713" target="_blank">Becker Business</a>
+
+</div>
+
+<p>
+
+Uma conversa curta sobre limites, priorização e como proteger oportunidades relevantes diante de pedidos de baixa qualidade ou pouco alinhados à estratégia.
+
+</p>
+
+<div class="podcast-note">
+
+Aplicável à produtividade profissional.
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 3
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section class="page">
+
+
+
+<div class="edition-bar">
+
+<div>
+CAFÉ
+</div>
+
+<div>
+NEGÓCIOS,
+ESTRATÉGIA & MERCADOS
+</div>
+
+<div>
+25 DE SETEMBRO DE 2026
+</div>
+
+</div>
+
+
+
+<div class="gmat-wrap">
+
+<div class="section">
+JOGOS DO CAFÉ
+</div>
+
+<h1 class="page-title">
+GMAT — 5 desafios para aquecer o raciocínio
+</h1>
+
+<div class="subtitle">
+Questões autorais inspiradas
+no estilo do GMAT.
+Meta: 10–12 minutos no total.
+</div>
+
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+1.
+QUANT
+—
+MÉDIO-DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma empresa divide suas vendas entre produtos A, B e C na razão 2:3:5. As margens são 20%, 30% e 40%, respectivamente. Qual é a margem média ponderada?
+
+</div>
+
+<div class="options">
+
+A) 30%<br>B) 31%<br>C) 32%<br>D) 33%<br>E) 34%
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+2.
+QUANT
+—
+DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma fábrica produz 600 unidades por dia com 8 máquinas idênticas operando 7,5 horas. Após adicionar 4 máquinas, a eficiência média cai 10%. Quantas unidades serão produzidas por dia, mantendo 7,5 horas?
+
+</div>
+
+<div class="options">
+
+A) 780<br>B) 792<br>C) 810<br>D) 828<br>E) 840
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+3.
+CRITICAL REASONING
+—
+MÉDIO-DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma rede de restaurantes afirma que seu novo programa de fidelidade elevou o lucro porque clientes cadastrados visitam as lojas com maior frequência. Qual alternativa mais fortalece o argumento?
+
+</div>
+
+<div class="options">
+
+A) O programa também aumentou o número de downloads do aplicativo.<br>B) Clientes cadastrados gastam mais por visita do que clientes não cadastrados.<br>C) As lojas participantes têm decoração mais moderna.<br>D) A rede lançou uma campanha publicitária no mesmo mês.<br>E) Alguns clientes cadastrados preferem receber cupons por e-mail.
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+4.
+CRITICAL REASONING
+—
+DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Após reduzir o preço, uma empresa vendeu mais unidades e concluiu que o desconto causou todo o crescimento. Qual é a principal falha?
+
+</div>
+
+<div class="options">
+
+A) Confundir uma condição suficiente com uma condição necessária.<br>B) Ignorar que aumento de volume sempre reduz margem.<br>C) Tratar correlação temporal como prova de causalidade.<br>D) Assumir que consumidores respondem igualmente a preços.<br>E) Considerar apenas custos variáveis na análise.
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+5.
+DATA INSIGHTS
+—
+DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma empresa avalia três projetos. Dados: A: investimento 40, retorno anual 12, risco 2; B: investimento 60, retorno anual 15, risco 1; C: investimento 50, retorno anual 14, risco 3. Se a empresa só aprova projetos com retorno anual/investimento de pelo menos 25% e risco máximo 2, quais projetos são elegíveis?
+
+</div>
+
+<div class="options">
+
+A) Apenas A<br>B) Apenas B<br>C) Apenas C<br>D) A e B<br>E) B e C
+
+</div>
+
+</div>
+
+
+
+
+<div class="answer-box">
+
+<div class="section">
+GABARITO — VIRE O CELULAR PARA CONFERIR
+</div>
+
+<div class="answer">
+
+1. C) 32%     2. B) 792     3. B) Clientes cadastrados gastam mais por visita do que clientes não cadastrados.     4. C) Tratar correlação temporal como prova de causalidade.     5. D) A e B
+
+</div>
+
+</div>
+
+
+<div class="red-box">
+
+<div class="section">
+PLACAR
+</div>
+
+<strong>5/5:</strong>
+excelente precisão.
+
+&nbsp;&nbsp;
+
+<strong>4/5:</strong>
+muito bom.
+
+&nbsp;&nbsp;
+
+<strong>3/5:</strong>
+revise o erro.
+
+&nbsp;&nbsp;
+
+<strong>0–2/5:</strong>
+refaça com foco em estrutura.
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 4
+</span>
+
+</div>
+
+
+
+</section>
+
+
+</div>
+
+</body>
+
+</html>

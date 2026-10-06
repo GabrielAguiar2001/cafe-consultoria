@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<title>
+  CAFÉ — 06 DE OUTUBRO DE 2026
+</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #d8d1be;
+  color: #181511;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.newspaper {
+  width: 1080px;
+  max-width: calc(100% - 30px);
+  margin: 30px auto;
+}
+
+
+/* =========================
+   FOLHA / PÁGINA
+========================= */
+
+.page {
+  background: #f4eedc;
+  margin-bottom: 28px;
+  padding: 38px 44px 30px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.14);
+  overflow: hidden;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.logo {
+  text-align: center;
+  font-size: 55px;
+  line-height: .95;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.logo-sub {
+  text-align: center;
+  margin-top: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: .8px;
+}
+
+.edition-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  border-top: 1px solid #332e28;
+  border-bottom: 1px solid #332e28;
+  padding: 6px 4px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.edition-bar div:nth-child(2) {
+  text-align: center;
+}
+
+.edition-bar div:last-child {
+  text-align: right;
+}
+
+
+/* =========================
+   CAPA
+========================= */
+
+.front-grid {
+  display: grid;
+  grid-template-columns: 42% 29% 29%;
+  margin-top: 18px;
+}
+
+.front-col {
+  min-width: 0;
+  padding: 0 17px;
+}
+
+.front-col:first-child {
+  padding-left: 0;
+}
+
+.front-col:last-child {
+  padding-right: 0;
+}
+
+.front-col + .front-col {
+  border-left: 1px solid #6f6559;
+}
+
+
+/* =========================
+   PÁGINA 2
+========================= */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 31% 38% 31%;
+  margin-top: 18px;
+}
+
+.analysis-col {
+  min-width: 0;
+  padding: 0 17px;
+}
+
+.analysis-col:first-child {
+  padding-left: 0;
+}
+
+.analysis-col:last-child {
+  padding-right: 0;
+}
+
+.analysis-col + .analysis-col {
+  border-left: 1px solid #6f6559;
+}
+
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+
+.section {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: .25px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.headline {
+  font-size: 39px;
+  line-height: .98;
+  margin: 0 0 10px;
+}
+
+.article-title {
+  font-size: 21px;
+  line-height: 1.05;
+  margin: 0 0 9px;
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.28;
+  font-style: italic;
+  color: #5c5248;
+  margin-bottom: 17px;
+}
+
+.article p,
+.page p {
+  font-size: 13.3px;
+  line-height: 1.47;
+  margin: 0 0 10px;
+  text-align: justify;
+}
+
+.article a,
+.podcast-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article a:hover,
+.podcast-name a:hover {
+  color: #8a2119;
+}
+
+.analysis {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-top: 7px;
+}
+
+.rule {
+  border-top: 1px solid #a39787;
+  margin: 18px 0;
+}
+
+
+/* =========================
+   BOXES
+========================= */
+
+.dark-box {
+  background: #29251f;
+  color: #f6efdc;
+  padding: 15px;
+  margin: 18px 0;
+}
+
+.dark-box .section {
+  color: #f6efdc;
+}
+
+.dark-box h2,
+.dark-box h3 {
+  margin-top: 4px;
+  line-height: 1.08;
+}
+
+.red-box {
+  border: 1.5px solid #8a2119;
+  padding: 14px;
+  margin: 16px 0;
+}
+
+.quote {
+  border-top: 2px solid #8a2119;
+  border-bottom: 1px solid #8a2119;
+  padding: 17px 7px;
+  margin: 18px 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.28;
+  font-style: italic;
+}
+
+
+/* =========================
+   MINI CASE
+========================= */
+
+.framework-item {
+  border-top: 1px solid #aaa090;
+  padding: 11px 0;
+}
+
+.framework-number {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.framework-item h3 {
+  font-size: 16px;
+  line-height: 1.12;
+  margin: 4px 0 0;
+}
+
+
+/* =========================
+   PODCASTS
+========================= */
+
+.page-title {
+  font-size: 40px;
+  line-height: 1;
+  margin: 7px 0 10px;
+}
+
+.podcast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 34px;
+  margin-top: 16px;
+}
+
+.podcast-grid > div:nth-child(even) {
+  border-left: 1px solid #776d61;
+  padding-left: 26px;
+}
+
+.podcast-item {
+  border-bottom: 1px solid #aaa090;
+  padding: 11px 0;
+}
+
+.podcast-name {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.podcast-item p {
+  margin-bottom: 4px;
+}
+
+.podcast-note {
+  font-size: 11px;
+  line-height: 1.3;
+  font-style: italic;
+  color: #776d61;
+}
+
+
+/* =========================
+   GMAT
+========================= */
+
+.gmat-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.question {
+  border-bottom: 1px solid #aaa090;
+  padding: 16px 0;
+}
+
+.question-type {
+  color: #8a2119;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.question-text {
+  font-size: 16px;
+  line-height: 1.38;
+  margin: 7px 0;
+}
+
+.options {
+  font-size: 14px;
+  line-height: 1.55;
+  padding-left: 12px;
+}
+
+.answer-box {
+  border: 1.5px solid #8a2119;
+  padding: 15px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.answer {
+  transform: rotate(180deg);
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #85796c;
+  padding-top: 5px;
+  margin-top: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  color: #766c61;
+}
+
+
+/* =========================
+   GUESSTIMATE TOOLBOX
+========================= */
+
+.guesstimate-box {
+  border: 1.5px solid #8a2119;
+  padding: 13px;
+  margin: 18px 0;
+  background: rgba(255,255,255,.16);
+}
+
+.guesstimate-theme {
+  font-size: 17px;
+  line-height: 1.1;
+  margin: 2px 0 10px;
+}
+
+.assumption-item {
+  border-top: 1px solid #b5aa9a;
+  padding: 8px 0;
+}
+
+.assumption-item:first-of-type {
+  border-top: 0;
+}
+
+.assumption-label {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #8a2119;
+}
+
+.assumption-value {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.assumption-note {
+  font-size: 11px;
+  color: #6f6559;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.guesstimate-exercise {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px solid #8a2119;
+}
+
+/* Proteção contra estouro sem cortar palavras no meio */
+
+.article,
+.article p,
+.analysis,
+.subtitle,
+.red-box,
+.dark-box,
+.guesstimate-box,
+.front-col,
+.analysis-col,
+.podcast-item,
+.podcast-grid > div,
+h1,
+h2,
+h3,
+a {
+  min-width: 0;
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.page,
+.front-grid,
+.analysis-grid,
+.podcast-grid {
+  min-width: 0;
+  max-width: 100%;
+}
+
+a {
+  white-space: normal;
+}
+
+/* =========================
+   CELULAR — LEITURA CORRIDA
+========================= */
+
+@media (max-width: 800px) {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #f4eedc;
+  }
+
+  .newspaper {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 26px 20px;
+    box-shadow: none;
+    border: none;
+    border-bottom: 10px solid #d8d1be;
+  }
+
+
+  /* CAPA — tudo corrido */
+
+  .front-grid {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .front-col {
+    width: 100%;
+    padding: 0;
+    border: none !important;
+  }
+
+  .front-col + .front-col {
+    border-left: none !important;
+    border-top: 1px solid #a39787 !important;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+
+  /* PÁGINA 2 — tudo corrido */
+
+  .analysis-grid {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .analysis-col {
+    width: 100%;
+    padding: 0;
+    border: none !important;
+  }
+
+  .analysis-col + .analysis-col {
+    border-left: none !important;
+    border-top: 1px solid #a39787 !important;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+
+  /* PODCASTS — uma coluna */
+
+  .podcast-grid {
+    display: block;
+  }
+
+  .podcast-grid > div:nth-child(even) {
+    border-left: none !important;
+    padding-left: 0;
+  }
+
+
+  /* TIPOGRAFIA */
+
+  .logo {
+    font-size: 44px;
+  }
+
+  .headline {
+    font-size: 34px;
+    line-height: 1.02;
+  }
+
+  .article-title {
+    font-size: 24px;
+  }
+
+  .page-title {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .article p,
+  .page p {
+    font-size: 15px;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+
+  /* CABEÇALHO */
+
+  .edition-bar {
+    display: block;
+    text-align: center;
+  }
+
+  .edition-bar div {
+    text-align: center !important;
+    margin: 3px 0;
+  }
+
+
+  /* GMAT */
+
+  .gmat-wrap {
+    max-width: none;
+  }
+
+  .question-text {
+    font-size: 17px;
+  }
+
+  .options {
+    font-size: 15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="newspaper">
+
+
+
+<section class="page">
+
+
+
+<div class="logo">
+CAFÉ
+</div>
+
+<div class="logo-sub">
+JORNAL DE NEGÓCIOS,
+ESTRATÉGIA,
+TECNOLOGIA E MERCADOS
+</div>
+
+<div class="edition-bar">
+
+<div>
+06 DE OUTUBRO DE 2026
+</div>
+
+<div>
+EDIÇÃO AUTOMÁTICA
+</div>
+
+<div>
+BRASIL • GLOBAL
+</div>
+
+</div>
+
+
+
+<div class="front-grid">
+
+
+<div class="front-col">
+
+<div class="section">
+CAPA
+</div>
+
+<h1 class="headline">
+
+<a href="https://www.investing.com/news/economy-news/brazil-investor-and-analyst-reactions-to-bolsonaro-lead-over-lula-in-election-4931418" target="_blank">Eleição brasileira redesenha prêmio de risco e expectativas para ativos locais</a>
+
+</h1>
+
+<div class="subtitle">
+
+Flávio Bolsonaro terminou a primeira rodada à frente de Lula; mercados antecipam possível guinada fiscal e econômica.
+
+</div>
+
+<div class="article">
+
+<p>A primeira rodada da eleição presidencial brasileira de 4 de outubro levou Flávio Bolsonaro e Luiz Inácio Lula da Silva ao segundo turno, marcado para 25 de outubro. Bolsonaro obteve desempenho superior ao indicado por pesquisas, enquanto Lula avançou com base de apoio menor. A reação inicial foi positiva para ações, câmbio e títulos brasileiros, refletindo a expectativa de uma agenda mais favorável à consolidação fiscal e ao investimento privado. O movimento, porém, depende da capacidade de o vencedor formar maioria no Congresso e transformar expectativas em reformas, controle de gastos e previsibilidade regulatória.</p>
+
+</div>
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+BRASIL
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/setembro/secretaria-de-politica-economica-projeta-crescimento-de-2-para-o-pib-em-2026-e-2-3-em-2027/" target="_blank">Ministério da Fazenda reduz projeção de crescimento do PIB para 2% em 2026</a>
+
+</h2>
+
+<p>A Secretaria de Política Econômica revisou a projeção de crescimento do PIB brasileiro de 2,3% para 2% em 2026 e de 2,5% para 2,3% em 2027. A revisão refletiu menor dinamismo de serviços e indústria, parcialmente compensado pela agropecuária.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A desaceleração combina juros ainda restritivos e maior comprometimento da renda das famílias. Empresas devem priorizar produtividade, capital de giro e investimentos com retorno mais rápido.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+ESTRATÉGIA CORPORATIVA
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.ptc.com/en/news/2026/schneider-electric-to-acquire-ptc" target="_blank">Schneider aposta em software industrial para ampliar sua plataforma de energia</a>
+
+</h2>
+
+<p>A Schneider Electric anunciou a aquisição da PTC por US$ 22,6 bilhões em dinheiro, pagando US$ 205 por ação. A PTC desenvolve software para projeto industrial, engenharia e gestão de dados de produtos. A transação representa prêmio de 42,3% sobre o último fechamento.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+O negócio combina hardware, automação e software recorrente. A tese é aumentar integração, retenção de clientes e venda cruzada, mas exige capturar sinergias para justificar múltiplo elevado.
+
+</div>
+
+
+
+</article>
+
+
+
+</div>
+
+
+
+<div class="front-col">
+
+
+
+<article class="article">
+
+<div class="section">
+
+SETOR EM DESTAQUE
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/outubro-tera-bandeira-verde-contas-de-luz-sem-custo-extra/" target="_blank">Bandeira verde reduz pressão de custos no mercado brasileiro de energia</a>
+
+</h2>
+
+<p>A Aneel confirmou bandeira tarifária verde para outubro, após melhora das condições hidrológicas e dos níveis dos reservatórios no Sul e Sudeste. A medida evita cobrança adicional nas contas de energia e reduz a necessidade de térmicas mais caras.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A melhora beneficia consumidores e setores intensivos em energia, mas também reduz receita extraordinária associada a condições hidrológicas adversas. O efeito sobre margens varia conforme contratos e exposição ao mercado livre.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+M&amp;A
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.investing.com/news/stock-market-news/kkr-to-buy-fund-administrator-gen-ii-in-51-billion-deal-including-debt-4933145" target="_blank">KKR compra administradora de fundos Gen II por US$ 5,1 bilhões</a>
+
+</h2>
+
+<p>A KKR concordou em adquirir a Gen II Fund Services, administradora de fundos de private capital, em transação avaliada em US$ 5,1 bilhões incluindo dívida. A Gen II era controlada por Hg e General Atlantic e presta serviços de administração para gestores de ativos alternativos.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A aquisição amplia a exposição da KKR à infraestrutura operacional dos mercados privados. O racional é capturar crescimento de ativos alternativos e receitas mais recorrentes, além de dados e distribuição.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="rule"></div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+EMPRESAS
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.gov.br/suframa/pt-br/assuntos/noticias/pim-mantem-trajetoria-de-crescimento-e-atinge-r-142-9-bilhoes-em-faturamento-ate-julho/" target="_blank">Polo Industrial de Manaus alcança R$ 142,9 bilhões em faturamento até julho</a>
+
+</h2>
+
+<p>O Polo Industrial de Manaus registrou faturamento acumulado de R$ 142,98 bilhões nos sete primeiros meses de 2026. O desempenho reforça a relevância de eletrônicos, bens de consumo e manufatura regional na atividade industrial brasileira.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+O número mostra escala, mas não basta para medir criação de valor: produtividade, conteúdo local, incentivos e dependência de componentes importados determinam a sustentabilidade do polo.
+
+</div>
+
+
+
+</article>
+
+
+
+</div>
+
+
+
+<div class="front-col">
+
+<div class="section">
+TENDÊNCIA CENTRAL
+</div>
+
+
+
+<article class="article">
+
+<div class="section">
+
+TENDÊNCIA
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/agosto/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026" target="_blank">NFS-e nacional obrigará pequenas empresas do Simples a adaptar seus processos</a>
+
+</h2>
+
+<p>A partir de 1º de novembro de 2026, micro e pequenas empresas prestadoras de serviços optantes pelo Simples Nacional deverão emitir NFS-e pelo emissor nacional. As regras de CBS e IBS para esse grupo terão efeitos a partir de janeiro de 2027.</p>
+
+
+
+<div class="analysis">
+
+Leitura estratégica:
+
+A mudança acelera a padronização fiscal e aumenta a demanda por integração contábil. Para pequenos negócios, o impacto principal será operacional: sistemas, classificação tributária e qualidade dos dados.
+
+</div>
+
+
+
+</article>
+
+
+
+<div class="red-box">
+
+<div class="section">
+LEITURA ESTRATÉGICA
+</div>
+
+<p>
+Leia cada notícia como parte de uma cadeia de valor.
+Quem captura margem? Quem precisa investir capital?
+Onde estão os gargalos e as capacidades críticas?
+</p>
+
+</div>
+
+
+<div class="dark-box">
+
+<div class="section">
+PARA PENSAR COMO CONSULTOR
+</div>
+
+<h3>
+Três perguntas para levar da notícia ao case
+</h3>
+
+<p>
+• Onde está o profit pool?
+</p>
+
+<p>
+• Qual capacidade diferencia os vencedores?
+</p>
+
+<p>
+• Quanto capital o crescimento exige?
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 1
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section class="page">
+
+
+
+<div class="edition-bar">
+
+<div>
+CAFÉ
+</div>
+
+<div>
+NEGÓCIOS,
+ESTRATÉGIA & MERCADOS
+</div>
+
+<div>
+06 DE OUTUBRO DE 2026
+</div>
+
+</div>
+
+
+
+<div class="analysis-grid">
+
+
+<div class="analysis-col">
+
+
+
+<article class="article">
+
+<div class="section">
+
+MERCADOS
+
+</div>
+
+<h2 class="article-title">
+
+<a href="https://www.fidelity.com/news/article/international/202610042117RTRSNEWSCOMBINED_L1N45R011_1" target="_blank">Emprego americano mais fraco reduz apostas em nova alta do Fed</a>
+
+</h2>
+
+<p>Dados recentes de emprego nos Estados Unidos diminuíram as apostas em uma alta adicional de juros pelo Federal Reserve em outubro. A reação combinou alta de ações, queda do dólar e estabilidade dos títulos, enquanto petróleo e rendimentos longos permaneceram elevados. Para empresas, o cenário reduz pressão imediata sobre custo de capital, mas mantém risco de inflação e volatilidade cambial.</p>
+
+
+
+</article>
+
+
+
+<div class="dark-box">
+
+<div class="section">
+IDEIA PARA ENTREVISTA
+</div>
+
+<h2>
+Como uma empresa deve decidir entre crescer por aquisição ou organicamente?
+</h2>
+
+<p>Estruture a resposta em quatro dimensões: atratividade do mercado, capacidade interna, retorno ajustado ao risco e velocidade de execução. Compare sinergias e integração com o custo de capital, o impacto sobre a alocação de recursos e a possibilidade de testar a tese por expansão orgânica.</p>
+
+</div>
+
+
+<div class="section">
+CHECKLIST
+</div>
+
+<h2 class="article-title">
+Perguntas para levar
+para uma entrevista
+</h2>
+
+
+<p>
+• Separe fato, interpretação e hipótese nas notícias.
+</p>
+
+<p>
+• Pergunte qual linha da demonstração financeira é afetada.
+</p>
+
+<p>
+• Compare crescimento de receita com crescimento de margem.
+</p>
+
+<p>
+• Identifique o risco de execução antes de celebrar uma aquisição.
+</p>
+
+<p>
+• Converta cada notícia em uma pergunta de entrevista.
+</p>
+
+
+
+</div>
+
+
+
+<div class="analysis-col">
+
+<div class="section">
+MINI-CASE DO CAFÉ
+</div>
+
+
+
+<h1 class="article-title">
+
+A companhia aérea que cresceu, mas perdeu margem
+
+</h1>
+
+<p>Uma companhia aérea doméstica aumentou passageiros em 18% após abrir novas rotas, mas a margem EBITDA caiu de 22% para 15%. O CEO suspeita que crescimento de oferta, custos aeroportuários e descontos comerciais estejam destruindo valor.</p>
+
+<div class="red-box">
+
+<strong>
+PERGUNTA DO CEO
+</strong>
+
+<p>
+Como recuperar margem sem interromper o crescimento da malha?
+</p>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+1. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Rentabilidade por rota: receita por passageiro, ocupação, yield e contribuição após custos variáveis.
+</h3>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+2. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Arquitetura de preços: segmentação por antecedência, horário, flexibilidade e disposição a pagar.
+</h3>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+3. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Produtividade operacional: utilização das aeronaves, tempo em solo, tripulação e confiabilidade.
+</h3>
+
+</div>
+
+
+
+<div class="framework-item">
+
+<div class="framework-number">
+4. BLOCO DE ANÁLISE
+</div>
+
+<h3>
+Portfólio de crescimento: classificar rotas por contribuição, conectividade e potencial de defesa competitiva.
+</h3>
+
+</div>
+
+
+
+<div class="section">
+RESPOSTA-BASE
+</div>
+
+<div class="quote">
+
+Primeiro, separar crescimento de volume de criação de valor por rota. Em seguida, corrigir pricing e horários, elevar utilização dos ativos e cortar ou redimensionar rotas estruturalmente deficitárias. O crescimento deve continuar apenas onde a contribuição incremental supera o custo de capital.
+
+</div>
+
+</div>
+
+
+
+<div class="analysis-col">
+
+<div class="section">
+RADAR DO DIA
+</div>
+
+
+
+<div class="red-box">
+
+<h2>
+Fretes marítimos
+</h2>
+
+<p>
+A volatilidade em rotas internacionais continua relevante para empresas importadoras. Contratos, estoques e alternativas de origem podem proteger margem quando o custo logístico se move rapidamente.
+</p>
+
+</div>
+
+
+
+<div class="red-box">
+
+<h2>
+Mercado de trabalho brasileiro
+</h2>
+
+<p>
+O Brasil criou 165,8 mil empregos formais em agosto e acumulou 1,13 milhão de vagas no ano. Serviços e construção lideraram, sustentando renda, consumo e demanda por crédito.
+</p>
+
+</div>
+
+
+
+<div class="red-box">
+
+<h2>
+Minério de ferro
+</h2>
+
+<p>
+A exposição das mineradoras a preços internacionais segue central para investimentos e dividendos. O ponto-chave é distinguir alta de preço à vista de melhora estrutural na demanda chinesa.
+</p>
+
+</div>
+
+
+
+
+
+<div class="quote">
+
+““A vantagem competitiva depende de como a empresa emprega os recursos disponíveis para produzir um resultado diferenciado.” — Jeetu Patel, Cisco”
+
+</div>
+
+<div class="red-box">
+
+<div class="section">
+PONTO DE REFLEXÃO
+</div>
+
+<p>
+Empresas que apenas reagem
+ao ambiente ficam para trás.
+
+As que antecipam movimentos
+constroem capacidades e
+capturam valor desproporcional.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 2
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section class="page">
+
+
+
+<div class="edition-bar">
+
+<div>
+CAFÉ
+</div>
+
+<div>
+NEGÓCIOS,
+ESTRATÉGIA & MERCADOS
+</div>
+
+<div>
+06 DE OUTUBRO DE 2026
+</div>
+
+</div>
+
+
+
+<div class="section">
+CADERNO DE ÁUDIO
+</div>
+
+<h1 class="page-title">
+Podcasts para pensar como um estrategista
+</h1>
+
+<div class="subtitle">
+
+Uma curadoria para acompanhar negócios,
+entender empresas e construir repertório
+para entrevistas de consultoria.
+
+</div>
+
+
+<div class="red-box">
+
+<div class="section">
+TRILHA RECOMENDADA
+</div>
+
+<strong>
+Como usar estes podcasts
+na sua rotina
+</strong>
+
+<p>
+Diário: notícias e episódios curtos.
+&nbsp;&nbsp;•&nbsp;&nbsp;
+Semanal: estratégia, mercados e gestão.
+&nbsp;&nbsp;•&nbsp;&nbsp;
+Deep dives: histórias completas de empresas.
+</p>
+
+</div>
+
+
+<div class="podcast-grid">
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Estratégia e inovação
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://hbr.org/podcast/2026/10/how-ai-is-changing-innovation-why-speed-alone-isnt-a-strategy" target="_blank">HBR IdeaCast</a>
+
+</div>
+
+<p>
+
+Jeetu Patel, da Cisco, discute como IA reduz o custo da experimentação, mas aumenta a importância de julgamento, foco e escolha do que não construir.
+
+</p>
+
+<div class="podcast-note">
+
+Boa ponte entre inovação e vantagem competitiva.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Varejo e liderança
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podurama.com/podcast/hbr-ideacast-i152022135" target="_blank">HBR IdeaCast</a>
+
+</div>
+
+<p>
+
+Ron Johnson revisita a criação das lojas Apple, a transformação da Target e o fracasso na JCPenney, destacando experiência física e execução.
+
+</p>
+
+<div class="podcast-note">
+
+Excelente para discutir transformação e customer experience.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Gestão e sucessão
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podcasts.apple.com/us/podcast/business-succession-planning-why-so-many-fail-and/id306759846?i=1000793342655" target="_blank">Financial Sense Newshour</a>
+
+</div>
+
+<p>
+
+O episódio examina por que sucessões em empresas familiares falham e usa a venda da Anheuser-Busch como estudo de caso.
+
+</p>
+
+<div class="podcast-note">
+
+Útil para governança, M&amp;A e continuidade.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Logística e transporte
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://podcasts.apple.com/us/podcast/overdrive-radio/id736806291" target="_blank">Overdrive Radio</a>
+
+</div>
+
+<p>
+
+O programa aborda a evolução da regulação de caminhões, protestos contra o mandato ELD e os efeitos sobre pequenas frotas.
+
+</p>
+
+<div class="podcast-note">
+
+Ajuda a conectar regulação, custos e operação.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Liderança
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://hbr.org/podcast/" target="_blank">HBR IdeaCast</a>
+
+</div>
+
+<p>
+
+O feed recente do HBR destaca discussões sobre novos CEOs, mudança organizacional e como líderes podem alinhar cultura, execução e adaptação.
+
+</p>
+
+<div class="podcast-note">
+
+Bom repertório para entrevistas comportamentais.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Estratégia
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://hbr.org/podcasts/hbr-on-strategy" target="_blank">HBR On Strategy</a>
+
+</div>
+
+<p>
+
+A página do programa reúne episódios e materiais de estratégia corporativa, execução e tomada de decisão para gestores.
+
+</p>
+
+<div class="podcast-note">
+
+Seleção útil para revisar frameworks de estratégia.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Negócios
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://www.businessmoverspodcast.com/" target="_blank">Business Movers</a>
+
+</div>
+
+<p>
+
+O podcast acompanha decisões de expansão, crises e reinvenção de empresas, com foco em dilemas de executivos e construção de vantagem.
+
+</p>
+
+<div class="podcast-note">
+
+Bom treino de narrativa empresarial.
+
+</div>
+
+</div>
+
+
+
+<div class="podcast-item">
+
+<div class="section">
+
+Mercados
+
+</div>
+
+<div class="podcast-name">
+
+<a href="https://www.btgpactual.com/" target="_blank">BTC Cast</a>
+
+</div>
+
+<p>
+
+O programa acompanha negócios, investimentos e movimentos do mercado brasileiro, com discussões voltadas a executivos e investidores.
+
+</p>
+
+<div class="podcast-note">
+
+Relevante para acompanhar o ambiente local.
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 3
+</span>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section class="page">
+
+
+
+<div class="edition-bar">
+
+<div>
+CAFÉ
+</div>
+
+<div>
+NEGÓCIOS,
+ESTRATÉGIA & MERCADOS
+</div>
+
+<div>
+06 DE OUTUBRO DE 2026
+</div>
+
+</div>
+
+
+
+<div class="gmat-wrap">
+
+<div class="section">
+JOGOS DO CAFÉ
+</div>
+
+<h1 class="page-title">
+GMAT — 5 desafios para aquecer o raciocínio
+</h1>
+
+<div class="subtitle">
+Questões autorais inspiradas
+no estilo do GMAT.
+Meta: 10–12 minutos no total.
+</div>
+
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+1.
+QUANT
+—
+MÉDIO-DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma empresa divide seus clientes em três grupos. O grupo A representa 40% da base e tem retenção de 80%; B representa 35% e retenção de 60%; C representa o restante e retenção de 50%. Qual é a retenção média da base?
+
+</div>
+
+<div class="options">
+
+A) 62,5%<br>B) 64,5%<br>C) 65,0%<br>D) 66,5%<br>E) 68,0%
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+2.
+QUANT
+—
+DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Um número inteiro positivo N deixa resto 2 quando dividido por 5, resto 3 quando dividido por 7 e é divisível por 4. Qual é o menor valor possível de N?
+
+</div>
+
+<div class="options">
+
+A) 38<br>B) 52<br>C) 68<br>D) 88<br>E) 108
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+3.
+CRITICAL REASONING
+—
+MÉDIO-DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma rede afirma: “Após reduzir preços em 10%, o número de clientes subiu 15%; portanto, a redução aumentou o lucro.” Qual afirmação mais enfraquece o argumento?
+
+</div>
+
+<div class="options">
+
+A) Concorrentes mantiveram seus preços.<br>B) O número de clientes cresceu em todas as lojas.<br>C) O custo variável por cliente aumentou mais que a receita média por cliente.<br>D) A campanha foi divulgada nas redes sociais.<br>E) Clientes novos compraram também produtos complementares.
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+4.
+CRITICAL REASONING
+—
+DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma cidade instalou ciclovias e observou queda de 8% nos congestionamentos. O prefeito conclui que as ciclovias causaram a melhora. Qual é a principal falha?
+
+</div>
+
+<div class="options">
+
+A) Ignora que o transporte público pode ter aumentado simultaneamente.<br>B) Assume que congestionamentos são sempre mensurados corretamente.<br>C) Confunde queda percentual com queda absoluta.<br>D) Não considera o custo de manutenção das ciclovias.<br>E) Pressupõe que todos os moradores usam bicicletas.
+
+</div>
+
+</div>
+
+
+
+<div class="question">
+
+<div class="question-type">
+
+5.
+DATA INSIGHTS
+—
+DIFÍCIL
+
+
+</div>
+
+<div class="question-text">
+
+Uma empresa avalia quatro lojas. A tabela mostra vendas e margem bruta: Loja A: R$ 80 mil e 30%; B: R$ 120 mil e 20%; C: R$ 100 mil e 25%; D: R$ 60 mil e 40%. Qual loja gera a segunda maior margem bruta em reais?
+
+</div>
+
+<div class="options">
+
+A) Loja A<br>B) Loja B<br>C) Loja C<br>D) Loja D<br>E) A e C empatadas
+
+</div>
+
+</div>
+
+
+
+
+<div class="answer-box">
+
+<div class="section">
+GABARITO — VIRE O CELULAR PARA CONFERIR
+</div>
+
+<div class="answer">
+
+1. B) 64,5%     2. C) 68     3. C) O custo variável por cliente aumentou mais que a receita média por cliente.     4. A) Ignora que o transporte público pode ter aumentado simultaneamente.     5. C) Loja C
+
+</div>
+
+</div>
+
+
+<div class="red-box">
+
+<div class="section">
+PLACAR
+</div>
+
+<strong>5/5:</strong>
+excelente precisão.
+
+&nbsp;&nbsp;
+
+<strong>4/5:</strong>
+muito bom.
+
+&nbsp;&nbsp;
+
+<strong>3/5:</strong>
+revise o erro.
+
+&nbsp;&nbsp;
+
+<strong>0–2/5:</strong>
+refaça com foco em estrutura.
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<span>
+Edição automática do Café
+</span>
+
+<span>
+PÁGINA 4
+</span>
+
+</div>
+
+
+
+</section>
+
+
+</div>
+
+</body>
+
+</html>
